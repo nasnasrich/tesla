@@ -1,14 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Polyline,
-  Popup,
-  CircleMarker,
-  useMap,
-} from "react-leaflet";
-import "leaflet/dist/leaflet.css";
+import { MapContainer, TileLayer, Marker, Polyline, Popup, CircleMarker, useMap } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 import L from "leaflet";
 import "./TrackingPage.css";
 
@@ -27,10 +19,9 @@ L.Icon.Default.mergeOptions({
 /* 🔒 ADMIN DATA — Update anytime */
 const shipmentsData = {
   "30enfb5u1n": {
-    status: "On Hold",     /*In Transit or On Hold*/
+    status: "On Hold",
     dispatchCountry: "United States",
     destinationCountry: "Brazil",
-
     packageInfo: {
       description: "Electronic equipment",
       weight: "12 kg",
@@ -38,7 +29,6 @@ const shipmentsData = {
       shippingType: "Air Freight",
       notes: "Handle with care – Fragile",
     },
-
     receiver: {
       name: "Carlos Silva",
       email: "carlos.silva@email.com",
@@ -46,11 +36,9 @@ const shipmentsData = {
       country: "Brazil",
       address: "Rua das Palmeiras 210, Rio de Janeiro, Brazil",
     },
-
     route: [
       { country: "Brazil", coords: [-14.235, -51.9253] },
     ],
-
     history: [
       {
         date: "2025-01-10",
@@ -64,13 +52,11 @@ const shipmentsData = {
   },
 };
 
-/* 🔊 SOUND ENGINE — GUARANTEED */
+/* 🔊 SOUND ENGINE */
 const useBeep = () => {
   const ctxRef = useRef(null);
   const play = (freq = 800) => {
-    if (!ctxRef.current) {
-      ctxRef.current = new (window.AudioContext || window.webkitAudioContext)();
-    }
+    if (!ctxRef.current) ctxRef.current = new (window.AudioContext || window.webkitAudioContext)();
     const osc = ctxRef.current.createOscillator();
     osc.frequency.value = freq;
     osc.connect(ctxRef.current.destination);
@@ -104,19 +90,16 @@ const TrackingPage = () => {
 
   const handleTrack = () => {
     const data = shipmentsData[code.toLowerCase()];
-
     if (!data) {
       setShipment(null);
       setError("❌ Incorrect tracking code. Please check and try again.");
       return;
     }
-
     setError("");
     setShipment(data);
     setIndex(0);
   };
 
-  /* 🔔 BEEP EVERY SECOND UNTIL PAGE EXIT */
   useEffect(() => {
     beepIntervalRef.current = setInterval(() => {
       if (!shipment) return;
@@ -126,19 +109,13 @@ const TrackingPage = () => {
     return () => clearInterval(beepIntervalRef.current);
   }, [shipment, beep]);
 
-  /* 🚚 MOVEMENT LOGIC */
   useEffect(() => {
     if (!shipment) return;
-
     clearInterval(moveIntervalRef.current);
 
     moveIntervalRef.current = setInterval(() => {
       if (shipment.status !== "In Transit") return;
-
-      setIndex((prev) => {
-        if (prev >= shipment.route.length - 1) return prev;
-        return prev + 1;
-      });
+      setIndex((prev) => (prev >= shipment.route.length - 1 ? prev : prev + 1));
     }, 3000);
 
     return () => clearInterval(moveIntervalRef.current);
@@ -149,21 +126,12 @@ const TrackingPage = () => {
       <div className="smart-tracking-page">
         <div className="smart-panel">
           <h1>Shipment Tracking</h1>
-
           <div className="tracking-guide">
-            <p>
-              Enter your tracking number below to see the real-time status of your shipment.
-            </p>
+            <p>Enter your tracking number below to see the real-time status of your shipment.</p>
           </div>
-
           {error && <p className="tracking-error">{error}</p>}
-
           <div className="track-input">
-            <input
-              placeholder="Enter tracking reference"
-              value={code}
-              onChange={(e) => setCode(e.target.value)}
-            />
+            <input placeholder="Enter tracking reference" value={code} onChange={(e) => setCode(e.target.value)} />
             <button onClick={handleTrack}>Track</button>
           </div>
         </div>
@@ -177,13 +145,8 @@ const TrackingPage = () => {
     <div className="smart-tracking-page">
       <div className="smart-panel">
         <h1>Shipment Tracking</h1>
-
         <div className="tracking-guide">
-          <p>
-            Your shipment is being tracked live. The map shows the current country of the shipment.
-            Check back anytime to see updates. 
-            {/* If on hold, a warning icon appears and beeping continues. */}
-          </p>
+          <p>Your shipment is being tracked live. The map shows the current country of the shipment.</p>
         </div>
 
         <div className="info-card">
@@ -218,29 +181,15 @@ const TrackingPage = () => {
           ))}
         </div>
 
-        {/* ✅ FIXED MAP */}
         <div className="smart-map-wrapper">
           <MapContainer className="smart-map">
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <MapController points={shipment.route.map(r => r.coords)} />
 
-            <Polyline
-              positions={shipment.route.slice(0, index + 1).map(r => r.coords)}
-              color="#007bff"
-              weight={5}
-            />
-
-            <CircleMarker
-              center={current.coords}
-              radius={18}
-              className={`smart-pulse ${shipment.status === "On Hold" ? "hold" : ""}`}
-            />
-
+            <Polyline positions={shipment.route.slice(0, index + 1).map(r => r.coords)} color="#007bff" weight={5} />
+            <CircleMarker center={current.coords} radius={18} className={`smart-pulse ${shipment.status === "On Hold" ? "hold" : ""}`} />
             <Marker position={current.coords}>
-              <Popup>
-                {shipment.status === "On Hold" ? "⚠️ ON HOLD" : "In Transit"}<br />
-                {current.country}
-              </Popup>
+              <Popup>{shipment.status === "On Hold" ? "⚠️ ON HOLD" : "In Transit"}<br />{current.country}</Popup>
             </Marker>
           </MapContainer>
         </div>
