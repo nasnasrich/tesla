@@ -19,7 +19,7 @@ L.Icon.Default.mergeOptions({
 /* 🔒 ADMIN DATA — Update anytime */
 const shipmentsData = {
   "30enfb5u1n": {
-    status: "On Hold",
+    status: "In Transit",     /* In Transit   On Hold */
     dispatchCountry: "United States",
     destinationCountry: "Brazil",
     packageInfo: {
