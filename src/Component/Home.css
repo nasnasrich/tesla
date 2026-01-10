@@ -1,0 +1,1393 @@
+/* Wrapper to isolate the background so it doesn't affect other pages */
+/* Container */
+.hero-container {
+  /* position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 350px;
+  overflow: hidden;
+  margin-top: 8px;
+  box-shadow: 1px 1px 1px 3px rgba(19, 19, 253, 0.2),
+              inset 0 0 5px rgba(10, 26, 143, 0.22); */
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 55vh;
+  /* margin-top:10px; */
+  /* Smooth fade when image changes */
+  transition: background-image 1s ease-in-out;
+  box-shadow: 1px 1px 1px 3px rgba(0, 0, 0, 0.2), inset 0 0 5px rgba(10, 26, 143, 0.22);
+}
+
+/* Left image */
+.vehicle-con {
+    margin-top: 0px;
+    width: 150px;
+}
+
+.VehiclesoneA{
+  margin-top: 0%;
+  padding-top: 0%;
+}
+/* Background video */
+.hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(30%);
+}
+
+/* Content Wrapper */
+.fersthero {
+  margin-left: 30px;
+  padding-top:10vh;
+  color: white; /* white text works best on slideshow imgs */
+}
+
+/* Inner Content */
+.insideindexA {
+  width: 100%;
+  max-width: 600px;
+  /* margin: 0 auto; */
+}
+
+.insideindexA h2{
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.insideindexA p{
+  text-decoration: none;
+}
+
+/* Responsive Text */
+.fersthero h2 {
+  margin-top: 40px;
+  margin-bottom: 0%;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 40px;
+}
+
+.fersthero p {
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  margin-bottom: 18px;
+  line-height: 1.4em;
+}
+
+/* Input */
+.fersthero input {
+  width: 80%;
+  max-width: 400px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  color: white;
+  background-color: rgba(255,255,255,0.08);
+  border: 1px solid white;
+  border-radius: 3px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.aiworks{
+  text-align: end;
+  margin-top: 0vh;
+}
+
+.aiworks img{
+  width: 8%;
+  border-radius:50%;
+  padding-left: 120%;
+}  
+
+/* Button */
+.fersthero button {
+  padding: 6px 15px;
+  margin-left: 10px;
+  font-size: 0.9rem;
+  background: transparent;
+  border: 1px solid #d1cbcb;
+  color: white;
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px rgb(80, 92, 161);
+  cursor: pointer;
+}
+
+/* Hover Effect */
+.fersthero button:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.Textme h4{
+ text-decoration:underline;
+}
+
+.Textmom h4{
+  text-decoration: underline;
+}
+
+.como h4{
+  text-decoration: underline;
+}
+
+.WorkingTesla h4{
+  text-decoration: underline;
+}
+
+.StudentA h4{
+  text-decoration: underline;
+}
+
+.videomeB h3{
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+/* //apply */
+
+.Applyform{
+  display: flex;
+  /* flex-wrap: wrap; */
+  margin-top: 20px;
+  /* box-shadow: 1px 1px 1px 1px  #0000e86c; */
+  border: 1px;
+  /* height:23vh; */
+  color: white;
+  background-color:darkslategray;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+}
+
+.ApplyA{
+  background-color:darkslategray;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+}
+.ApplyA p{
+ padding-left: 15px;
+ padding-right: 15px;
+ padding-bottom: 2vh;
+ padding-top: 2vh;
+ width: 90%;
+ margin-bottom: 4px;
+ background-color:darkslategray;
+box-shadow: 5px 5px 5px rgb(30, 30, 31);
+}
+
+.ApplyA button{
+/* font-size: 11px; */
+margin: 2px;
+margin-left: 80px;
+margin-top: 10px;
+margin-bottom:1vh;
+background: transparent;
+color: white;
+border: 1px solid rgb(5, 123, 115);
+border-radius:2px;
+text-decoration: none;
+/* box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.2), inset 0 0 5px rgba(0, 0, 0, 0.22) ; */
+  /* box-shadow: 3px 5px 5px rgb(30, 30, 31); */
+box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.2), inset 0 0 5px rgba(0, 0, 0, 0.22) ;
+
+}
+
+.ApplyB{
+  background-color:darkslategray;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+}
+.ApplyB p{
+ /* width:75%; */
+ background-color:darkslategray;
+box-shadow: 5px 5px 0px rgb(30, 30, 31);
+padding-left:0px;
+padding-right:0px;
+}
+
+.ApplyB input{
+ margin-top: 10px;
+}
+
+
+    
+
+
+
+/* Showcasing */
+
+.SHowH1 h1{
+  text-align: center;
+  font-size:22px;
+  margin-top: 8vh;
+  margin-bottom: 0%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+  /* text-decoration: underline; */
+  background-color:darkslategray;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+} .SHowH1{margin-bottom: 2%;}
+
+.Showcasing{
+    margin-top:0%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 2px;
+    margin-right: 2px;
+    text-align: center;
+    color: white;
+    background-color:darkslategray;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+}
+
+
+.ShowcasingA{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 20px;
+background-color:darkslategray;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+}
+
+.ShowcasingA h4{
+  padding-bottom: 0%;
+  margin-bottom: 0%;
+}
+
+
+.TeasA img{
+  border-radius: 2px;
+  filter: brightness(100%);
+  width: 200px;
+  height: 215px;
+  box-shadow: 4px 4px 5px rgb(30, 30, 31);
+}
+
+.TeasB img{
+border-radius: 2px;
+filter: brightness(100%);
+width: 200px;
+height: 215px;
+ box-shadow: 4px 4px 5px rgb(30, 30, 31);
+}
+
+.TeasC img{
+border-radius: 2px;
+filter: brightness(100%);
+width: 200px;
+height: 215px;
+ box-shadow: 4px 4px 5px rgb(30, 30, 31);
+}
+
+
+.TeasD img{
+border-radius: 2px;
+filter: brightness(100%);
+width: 187px;
+/* height: 215px; */
+ box-shadow: 4px 4px 5px rgb(30, 30, 31);
+}
+
+
+.TeasE img{
+border-radius: 2px;
+filter: brightness(100%);
+width: 200px;
+height: 215px;
+ box-shadow: 4px 4px 5px rgb(30, 30, 31);
+}
+
+.ShowcasingA h1{
+  font-size: 11px;
+  margin-top: 0%;
+  padding-top: 0%;
+  
+}
+
+.Showcasing h1 a{
+  color: rgb(217, 251, 217);
+}
+
+
+/* 
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border: 2px solid #000;
+  overflow: hidden;
+  background-color: aqua;
+} */
+
+
+
+                          /* text */
+
+.Textdad{
+  margin-top: 2%;
+  text-align: center;
+  /* margin-right: 40px; */
+  color: white;
+  background-color:darkslategray;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+  justify-content: center;
+}
+
+.Textme{
+  background-color:darkslategray;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+  height:13vh;
+}
+
+.Textme img{
+box-shadow: 1px 2px 2px rgb(0, 0, 0);
+border: 5 solid black;
+}
+
+.Textme a{
+color: rgb(217, 251, 217);
+}
+
+.Textme h4{
+text-align: center;
+padding-top: 2vh;
+margin: 0%;
+}
+
+.Textmom{
+  display: flex;
+  margin: 4px;
+  background-color:darkslategray;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+}
+
+
+.Textmom h4{
+  margin-left: 1%;
+  padding-right: 2%;
+  width: 80%;
+}        
+
+
+/* //Working at Tesla */
+.WorkingatTesla{
+  margin-top: 1%;
+  margin-bottom: 0%;
+  text-align: center;
+  color: white;
+  background-color:darkslategray;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+}
+
+.como{
+  background-color:darkslategray;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+  height: 13vh;
+}
+
+.como h4{
+padding-top: 2vh;
+text-align: center;
+color:white;
+margin: 0%;
+}
+
+.como img{
+box-shadow: 1px 2px 2px rgb(0, 0, 0);
+border: 5 solid black;
+}
+
+.como a{
+color: rgb(217, 251, 217);
+}
+
+.WorkingTesla{
+  display: flex;
+  margin: 5px;
+  background-color:darkslategray;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+}
+
+.WorkingTesla h4{
+  margin-left: 15px;
+  width: 80%;
+  color: white;
+}
+
+.WorkingTesla marquee{
+text-decoration: underline;
+font-family:inherit;
+}
+
+/* Student Opportunities */
+
+.StudentOpportunities{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 2vh;
+  background-color:darkslategray;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+  margin:10%;
+  color: white;
+}
+
+.StudentA{
+  width: 45%;
+  height: 50vh;
+  /* background-color:darkslategray; */
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+}
+
+.StudentA h4{
+  text-decoration: none;
+
+}
+
+/* .StudentOpportunities h4{
+  
+} */
+
+.StudentB{
+  background-image: url("../assets/pmsh.jpg");
+  background-position: center;
+  background-size: contain;
+  /* background-repeat: no-repeat; */
+  width: 50%;
+  color: white;
+  box-shadow: 4px 4px 5px rgb(0, 0, 0);
+  border-radius: 2px;
+}
+
+
+.StudentB h3{
+  width: 65%;
+  margin-left: 15px;
+  font-size: 14px;
+  text-align: end;
+  padding-left: 90px;
+  text-decoration: none;
+}
+.StudentB p{
+  width: 65%;
+  margin-left: 15px;
+}
+
+.StudentOpportunities button{
+  border: 1px solid black;
+border-radius: 2px;
+background: transparent;
+color: white;
+text-decoration: none;
+border: 1px solid rgb(5, 123, 115);
+box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.2), inset 0 0 5px rgba(10, 26, 143, 0.22) ;
+}
+
+
+            /* vide */
+.videoimg{
+  position: relative;
+  /* width: 100%; */
+  height: 60vh;        /* full screen height */
+  overflow: hidden;
+  /* margin-top: 25px; */
+  color: rgb(0, 0, 0);
+  display: flex;
+  margin: 25px;
+  margin-bottom: 0px;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+  margin: 5%;
+}
+
+.videome{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 80%;
+  object-fit: cover;    /* keeps video responsive */
+  z-index: -1;          /* sends video behind content */
+  filter: brightness(45%);
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+}
+
+
+.videomeA {
+color: white;
+width: 85%;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+
+}
+
+.videomeA p{
+width: 70%;
+padding-left: 15px;
+padding-top: 10px;
+} 
+
+
+.videomeB{
+ color: white;
+margin-left: 25px;
+height:48vh;
+background-color:darkslategray;
+box-shadow: 5px 5px 5px rgb(30, 30, 31);
+}
+
+.videomeB h2{
+text-decoration: underline;
+padding-left: 4%;
+padding-bottom: 1%;
+background-color:darkslategray;
+box-shadow: 5px 5px 5px rgb(30, 30, 31);
+}
+
+.videomeB h4{
+width:90%;
+text-decoration: none;
+padding-left:5%;
+padding-right:5%;
+padding-top: 2%;
+padding-bottom: 12%;
+font-family: inherit;
+background-color:darkslategray;
+box-shadow: 5px 5px 5px rgb(30, 30, 31);
+}
+
+
+/* Tesla participates */
+.Teslaparticipates{
+  margin-top:10vh;
+  color: white;
+  background-color:darkslategray;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+  height: 40vh;
+}
+.participates{
+  display: flex;
+  text-align: center;
+  margin-top: 2vh;
+}
+
+.Teslapart{
+  text-align: center;
+  background-color:darkslategray;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+  height:12vh;
+}
+
+.Teslapart{
+  text-decoration: underline;
+}
+
+.Teslapart img{
+  box-shadow: 1px 2px 2px rgb(0, 0, 0);
+  border: 5 solid black;
+}
+
+.participates img{
+  background-color:darkslategray;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+  padding-bottom:14px;
+}
+
+
+.TeslaA{
+  justify-content: center;
+  margin-left: 10px;
+  margin-left: 10px;
+  
+}
+
+.TeslaA p{
+  background-color:darkslategray;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+  padding-bottom: 1%;
+  margin-bottom:1%;
+}
+
+.feull{
+margin-top: 0%;
+padding-top: 0%;
+}
+
+.feull h4{
+  text-align: center;
+  text-decoration: underline;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 13px;
+  /* width: ; */
+}
+
+
+@media (max-width: 1210px) {
+  .aiworks{
+  /* text-align: end; */
+  margin-top: 0vh;
+  /* padding-left: 40%; */
+}
+
+.aiworks img{
+  width: 8%;
+  border-radius:50%;
+  /* text-align: end; */
+  padding-left: 50%;
+}  
+}
+
+
+@media (max-width: 1028px) {
+  .aiworks{
+  /* text-align: end; */
+  margin-top: 0vh;
+  padding-left: 0%;
+}
+
+.aiworks img{
+  width: 8%;
+  border-radius:50%;
+  /* text-align: end; */
+  padding-left: 10%;
+}  
+}
+
+
+@media (max-width: 992px) {
+  .aiworks{
+  /* text-align: end; */
+  margin-top: 0vh;
+  padding-left: 0%;
+}
+
+.aiworks img{
+  width: 8%;
+  border-radius:50%;
+  /* text-align: end; */
+  padding-left: 10%;
+}  
+}
+
+@media (max-width: 995px) {
+  .aiworks{
+  /* text-align: end; */
+  margin-top: 0vh;
+  padding-left: 0%;
+}
+
+.aiworks img{
+  width: 8%;
+  border-radius:50%;
+  /* text-align: end; */
+  padding-left: 10%;
+}  
+}
+
+
+@media (max-width: 972px) {
+  .videomeA{
+  font-size: 13px
+  }
+
+    .videomeB h2{
+    padding-left: 85px;
+  }
+
+
+  .videomeB h3{
+    padding-left: 85px;
+  }
+
+  .videomeB h4{
+  width:90%;
+  text-decoration: none;
+  padding-left:0%;
+  font-family: inherit;
+}
+  
+ 
+}
+
+
+@media (max-width: 973px) {
+  .videomeB h4{
+  width:90%;
+  text-decoration: none;
+  padding-left:10%;
+  font-family: inherit;
+}
+
+ .aiworks{
+  /* text-align: end; */
+  margin-top: 0vh;
+  padding-left: 0%;
+ }
+
+ .aiworks img{
+  width: 10%;
+  border-radius:50%;
+
+}  
+}
+
+
+@media (max-width: 725px) {
+  .videomeA{
+  font-size: 11px;
+  }
+ .aiworks{
+  /* text-align: end; */
+  margin-top: 0px;
+  padding-left: 0%;
+  padding-top: 0%;
+ }
+
+ .aiworks img{
+  width: 10%;
+  /* border-radius:50%; */
+  padding-top: 0%;
+  margin-top: 0%;
+}  
+}
+
+
+/* -------------------------------
+   Mobile Responsive Fixes
+--------------------------------*/
+@media (max-width: 600px) {
+  .hero-container {
+    height: 70vh;
+  }
+
+  .fersthero input {
+    width: 95%;
+  }
+
+  .fersthero button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 622px) {
+
+  
+  .hero-container{
+   height:50vh; 
+  }
+  .StudentB{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.StudentB h3{
+  padding-left: 0px;
+}
+}
+
+@media (max-width: 560px) {
+
+  .hero-container{
+    /* background-color: aqua; */
+    display: flex;
+  }
+
+  .VehiclesoneA{
+     /* margin: 0%; */
+     padding: 0%;
+     margin-left: 0%;
+     /* display:none; */
+     width: 0%;
+     margin-top: 0%;
+     /* background-color: red; */
+  }
+
+  /* .VehiclesoneA img{
+    margin-top: 0%;
+    margin-top: 0%;
+    width: 80px;
+  }
+   */
+.insideindexA h2{
+ display: flex;
+ width: 100px;
+}
+  .vehicle-con{
+    margin-top: 0%;
+    padding-top: 0%;
+  }
+
+  .VehiclesoneA{
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+
+  .VehiclesoneA img{margin-top: 0%; padding-top: 0%;}
+  .fersthero h2{
+    font-size: 30px;
+    margin-top: 0px;
+    width: 50%;
+  }
+
+  .fersthero{
+    /* background-color: blue; */
+    /* display: grid; */
+    padding-top:10%;
+    margin-left: 0%;
+  }
+  .fersthero p{
+  width:82%;
+  padding-left:55px;
+  padding-top:0vh;
+  margin-top: 3vh;
+  font-size: 22px;
+}
+
+
+.aiworks img{
+  width: 11%;
+  border-radius:50%;
+  /* text-align: end; */
+  padding-left: 10%;
+}
+
+
+
+/* Apply */
+
+.Applyform{
+  text-align: center;
+  display: grid;
+  height: 70vh;
+  width: 95%;
+  margin-left:2%;
+  /* flex-wrap: wrap; */
+  margin-top: 15px;
+  margin-bottom: 0%;
+  padding-bottom: 0%;
+  /* box-shadow: 1px 1px 1px 1px  #0000e86c; */
+  border: 1px;
+  color: white;
+}
+
+
+.ApplyA p{
+padding-top: 10px;
+ width: 78%;
+ font-size: 20px;
+ padding-left: 5%;
+ margin-left:30px;
+ margin-bottom: 4px;
+ box-shadow:2px 2px 2px 2px rgb(30, 30, 31);
+
+}
+
+.ApplyA button{
+font-size: 13px;
+margin: 0px;
+margin-top: 35px;
+margin-bottom: 2vh;
+border: 1px solid black;
+border-radius: 2px;
+/* box-shadow: 1px 1px 1px 2px rgba(19, 19, 253, 0.2), inset 0 0 5px rgba(10, 26, 143, 0.22) ; */
+}
+
+.ApplyB{
+  margin-top: 10px;
+}
+.ApplyB p{
+ margin-left: 74px;
+ width:55%;
+ font-size: 20px;
+ padding-left: 10px;
+ padding-right: 10px;
+ padding-top: 8px;
+ padding-bottom: 8px;
+ /* box-shadow:2px 2px 2px 2px rgb(30, 30, 31); */
+}
+
+.ApplyB input{
+ margin-top: 10px;
+margin-left: 8px;
+}
+
+
+.SHowH1 h1{
+background: none;
+color: #000;
+border: 1px solid black;
+padding-top: 2%;
+padding-bottom: 2%;
+margin-top:5%;
+margin-left:5%;
+margin-bottom: 1vh;
+width: 90%;
+text-decoration: none;
+}
+
+
+
+.Showcasing{
+  width:90%;
+  background: none;
+  color: black;
+  /* box-shadow:2px 2px 2px 2px rgb(30, 30, 31); */
+  box-shadow: none;
+    margin-left:5%;
+  border: none;
+  display: grid;
+  margin-bottom: 2vh;  
+}
+
+.ShowcasingA{
+  /* background-color: none; */
+  justify-content: start;
+  /* margin-left:0px; */
+  background: none;
+  color: black;
+  margin-top: 0vh;
+  box-shadow: none;
+  display: grid;
+  box-shadow:2px 2px 2px 2px rgb(30, 30, 31);
+}
+
+.ShowcasingA h1 a{
+  color: blue;
+}
+
+
+
+.Textdad{
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 4vh;
+  /* border: none; */
+}
+
+.Textme{
+  margin-bottom: 1vh;
+}
+
+
+
+.TeasA{
+  margin-top: 2vh;
+  margin-left:15%;
+  width: 130%;
+  padding-top: 5%;
+  box-shadow: 4px 4px 5px rgb(30, 30, 31);
+  border-radius: 3px;
+}
+
+.TeasA img{
+  border-radius: 5px;
+  filter: brightness(80%);
+  width: 225px;
+  margin-top: 2vh;
+  /* width: 10px; */
+  /* height: 40vh; */
+  box-shadow: 4px 4px 5px rgb(30, 30, 31);
+}
+
+
+.TeasB{
+  width: 130%;
+  margin-left:15%;
+  box-shadow: 4px 4px 5px rgb(30, 30, 31);
+  border-radius: 3px;
+}
+
+.TeasB img{
+border-radius: 5px;
+filter: brightness(80%);
+margin-top: 4vh;
+width: 225px;
+/* width: 10px; */
+/* height: 40vh; */
+ box-shadow: 4px 4px 5px rgb(30, 30, 31);
+}
+
+.TeasC{
+  width: 130%;
+  margin-left:15%;
+  box-shadow: 4px 4px 5px rgb(30, 30, 31);
+  border-radius: 3px;
+}
+
+.TeasC img{
+border-radius: 5px;
+filter: brightness(80%);
+width: 225px;
+margin-top: 4vh;
+/* height: 40vh; */
+ box-shadow: 4px 4px 5px rgb(30, 30, 31);
+}
+
+.TeasD{
+  margin-left:15%;
+  width:130%;
+  box-shadow: 4px 4px 5px rgb(30, 30, 31);
+  border-radius: 3px;
+}
+
+.TeasD img{
+border-radius: 5px;
+filter: brightness(80%);
+width: 218px;
+margin-top: 2vh;
+height:22vh;
+ box-shadow: 4px 4px 5px rgb(30, 30, 31);
+}
+
+.TeasE{
+  margin-left:15%;
+  margin-bottom: 2vh;
+  width: 130%;
+  box-shadow: 4px 4px 5px rgb(30, 30, 31);
+  border-radius: 3px;
+}
+.TeasE img{
+border-radius: 5px;
+filter: brightness(80%);
+margin-top: 2vh;
+width:  225px;
+/* height: 40vh; */
+ box-shadow: 4px 4px 5px rgb(30, 30, 31);
+}
+
+.Textme{
+  font-size: 18px;
+}
+
+
+.WorkingatTesla{
+  width:90%;
+  margin-left: 5%;
+}
+.como{
+  font-size: 18px;
+}
+
+
+.Textdad{
+  margin-top: 0%;
+  text-align: center;
+  margin-right: 0px;
+  display: grid;
+}
+
+
+.Textmom{
+  display: grid;
+  margin: 4px;
+}
+
+.Textmom h4{
+text-align:start;
+width: 70%;
+margin-left:5%; 
+font-size: 20px;  
+/* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+text-decoration: none;
+}   
+
+
+
+
+
+.WorkingatTesla{
+  margin-top: 0%;
+  text-align: center;
+}
+
+.como h4{
+padding-top: 2vh;
+text-align: center;
+margin: 0%;   
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.WorkingTesla{
+  display: grid;
+  /* margin: 5px; */
+  margin-top:2vh;
+  margin-bottom: 2vh;
+  margin-left: 2%;
+  padding-left: 0%;
+}
+
+.WorkingTesla h4{
+  margin-left: 30%;
+  width:70%;
+  text-decoration: none;
+  font-size: 20px;
+  text-align: start;
+  padding-left: 0%;
+  margin-left: 4%;
+}
+
+.WorkingTesla marquee{
+  text-decoration: underline;
+  font-family:inherit;
+  font-size: 18px;
+}
+
+
+
+.StudentOpportunities{
+  display: grid;
+  justify-content: none;
+  height:100vh;
+  gap: 0px;
+  margin-top: 1vh;
+  padding-top: 2vh;
+  width: 91%;
+  margin-left: 3%;
+  border: none;
+  color:white;
+  background-color: white;
+}
+
+.StudentA{
+  width:95%;
+  height: 42vh;
+  margin-left:2%;
+  margin-bottom: 0%;
+  background-color:rgb(93, 91, 86);
+}
+
+.StudentA h3{
+  width: 100%;
+  text-align: start;
+  margin-bottom: 4%;
+  font-size: 20px;
+  padding-left:5%;
+}
+
+.StudentA h4{
+  text-align: center;
+  padding-left:5%;
+  margin-left: 0px;
+  padding-bottom: 0%;
+  margin-top: 0%;
+  margin-bottom: 7px;
+  font-size: 18px;
+  width: 228px;
+  text-align: start;
+  text-decoration: none;
+  /* justify-content: center; */
+}
+
+
+.StudentB{
+  background-image: url("../assets/pmsh.jpg");
+  background-position: center;
+  background-size:cover;
+  /* background-repeat: no-repeat;  */
+  width:95%;
+  gap: 0%;
+  height:56vh;
+  color: white;
+  box-shadow: 4px 4px 5px rgb(30, 30, 31);
+  border-radius: 2px;
+  margin-top: 0vh;
+  margin-left: 2%;
+}
+
+
+.StudentB h3{
+  width: 65%;
+  margin-left: 0px;
+  font-size: 20px;
+  text-align: end;
+  padding-left: 82px;
+}
+.StudentB p{
+  width:70%;
+  margin-left: 15px;
+  font-size:20px;
+}
+
+.StudentOpportunities button{
+border: 1px solid black;
+font-size:14px;
+border-radius: 2px;
+box-shadow: 1px 1px 1px 1px rgb(35, 69, 63) ;
+margin-left: 10px;
+margin-top:2%;
+}
+
+
+
+.Showcasing h4{font-size:20px;}  .Showcasing h1{font-size: 15px;} 
+
+
+.videoimg{
+  position: relative;
+  width:91%;
+  height:96vh;        /* full screen height */
+  overflow: hidden;
+  margin-top: 25px;
+  color: rgb(0, 0, 0);
+  display: grid;
+  margin-left:3%;
+  /* margin: 25px; */
+  margin-bottom: 15px;
+}
+
+.videome{
+  position: absolute;
+  top: 0;
+  left: 0;
+  gap: 20px;
+  width: 45%;
+  height: 80vh;
+  object-fit: cover;    /* keeps video responsive */
+  z-index: -1;          /* sends video behind content */
+  filter: brightness(45%);
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+}
+
+
+.videomeA {
+color: white;
+width: 85%;
+font-size: 15px;
+margin-bottom: 0%;
+padding-bottom: 0%;
+height: 50vh;
+}
+
+.videoimg video{
+color: white;
+width: 98%;
+height: 80vh;
+}
+
+.videomeA p{
+width:70%;
+padding-left: 15px;
+padding-top: 10px;
+font-size: 20px;
+margin-bottom: 0%;
+}
+
+.videomeB{
+margin-left: 0px;
+margin-top: 5vh;
+padding-top: 0%;
+/* height: 80vh; */
+margin-bottom: 0vh;
+/* background-color: aqua; */
+}
+ .videomeB h2{
+  text-decoration: none;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding-top: 0%;
+  width: 59%;
+  padding-left: 4%;
+  margin-top: 5%;
+  margin-left: 18%;
+  margin-bottom: 0%;
+ }
+
+.videomeB h4{
+text-align: start;
+width:87%;
+text-decoration: none;
+font-size:19px;
+/* padding-top: 0%; */
+margin-left: 3%;
+margin-bottom: 0vh;
+padding-left:2%;
+/* background-color: aqua; */
+}
+
+
+
+
+/* Tesla participates */
+
+.Teslaparticipates{
+  width: 91%;
+  margin-top: 2%;
+  margin-left:3%;
+  margin-bottom: 0%;
+  height:75vh;
+}
+
+.participates{
+  display: grid;
+  text-align: center;
+}
+
+.Teslapart img{
+ padding-top:0%;
+}
+
+.participates img{
+border: none;
+background-color: none;
+background-color:none;
+  box-shadow: none;
+}
+
+.Teslapart{
+  text-align: center;
+  text-decoration: underline;
+  height: 13vh;
+  box-shadow: none;
+  width: 99%;
+}
+
+.Teslapart p{
+  font-size: 20px;
+  padding-top:3%;
+  padding-bottom: 4%;
+  padding-left: 4%;
+  text-align: start;
+  margin-top: 0%;
+  font-size: 23px;
+    box-shadow: 5px 5px 5px rgb(30, 30, 31);
+
+}
+
+.TeslaA{
+  justify-content: center;
+  margin-left: 10px;
+  margin-left: 10px;
+}
+
+.TeslaA p{
+  width: 90%;
+  padding-left: 8px;
+  padding-right: 4%;
+  padding-top:4px;
+  padding-bottom: 5%;
+  text-align: start;
+  font-size:22px;
+}
+
+.feull{
+  text-align: center;
+  text-decoration: underline;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.feull h4{
+  margin-top: 0%;
+  font-size: 16px;
+  text-align: center;
+}
+}
+
+

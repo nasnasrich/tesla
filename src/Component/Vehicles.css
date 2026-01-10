@@ -1,0 +1,273 @@
+/* Remove margins */
+.vehicles {
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.Vehic {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 55vh;
+    margin-top: 8px;
+    /* Smooth fade when image changes */
+    transition: background-image 1s ease-in-out;
+    /* box-shadow: 1px 1px 1px 3px black, inset 0 0 5px rgba(10, 26, 143, 0.22); */
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+    /* object-fit: cover; */
+    z-index: -1;
+    filter: brightness(95%);
+}
+
+  
+
+/* Left image */
+.vehicle-icon {
+    margin-top: 40px;
+    width: 150px;
+}
+ 
+/* Text section */
+.Vehictex {
+    margin-left: 20px;
+    color: white; /* white text works best on slideshow imgs */
+}
+
+.Vehictex h1 {
+    margin-top: 40px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+}
+
+/* Buttons */
+.btn {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none; 
+    background-color:#e21b1b;
+    color: white;
+    font-size: 15px; 
+    cursor: pointer;
+    border-radius: 4px; 
+
+}
+
+.btn.secondary {
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.Vehicmoveline hr{
+color: blue;
+border: rgb(44, 43, 43) solid 2px;
+margin-top: 20px;
+width: 60%;
+/* box-shadow: 2px 2px 2px rgb(132, 132, 239) ; */
+margin-left: 0;
+margin-right: 0;
+
+}
+
+.Vehicmove{
+    display: flex;
+    margin-top: 10px;
+}
+
+
+.Vehicmove h1{
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+margin: 0;
+font-size: 15px;
+padding-top: 18px;
+}
+
+
+
+
+.Vehicmovetrbcon{
+    display: flex;
+    flex-wrap: wrap;
+    gap:55px;
+    justify-content: center;
+    margin-top: 15px;
+    /* background-color: rgb(249, 243, 243); */
+    /* box-shadow:2px 2px 2px 2px rgb(132, 132, 239) ; */
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border: 1px solid blue;
+}
+
+
+.Vehicmovetrb h1{
+    font-size: 15px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 0%;
+}
+
+.Vehicmovetrb h5{
+    margin-top: 0%;
+    margin-bottom: 0%;
+    padding-left:2%;
+    font-size: 12px;
+}
+
+.Vehicmovetrb button{
+font-size: 11px;
+/* margin: 1px; */
+border: 1px solid black;
+border-radius: 2px;
+box-shadow: 1px 1px 1px 1px rgb(132, 132, 239) ;
+margin-left: 4%;
+}
+
+.Vehicmovetrb img{
+ border-radius:4px;
+ padding-left: 30px;
+}
+
+
+
+.mar{
+    margin-top: 15px;
+}
+
+/* CSS for alert on add to cart */
+.cart-alert {
+  position: fixed;
+  top: 45px;
+  right: 20px;
+  background-color:darkslategray;
+  box-shadow: 5px 5px 5px rgb(30, 30, 31);
+  color: #fff;
+  /* padding: 14px 22px; */
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 2px;
+  font-weight: 600;
+  z-index: 9999;
+  /* box-shadow: 0 4px 20px rgba(0,0,0,0.4); */
+  animation: fadeSlide 0.3s ease;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 1210px) {
+    .Vehicmovetrbcon{
+        gap:20px;
+    }
+}
+/* Mobile */
+@media (max-width: 560px) {
+
+    .Vehiclesoneimg img{
+        display: none;
+      margin-left: 0%;
+      padding-left: 0%;
+      margin: 0%;
+      padding: 0%;
+    }
+
+    .Vehic {
+        flex-direction: column;
+        /* text-align: center; */
+        filter: brightness(90%);
+        height: 64vh;
+    }
+
+
+
+    .Vehic button{
+        /* gap: 15%; */
+        margin-top: 2%;
+    }
+
+     .butto{
+        display: flex;
+        width: 110%;
+        /* background-color: #e21b1b; */
+    }
+
+    .butto{
+        display: flex;
+        width: 110%;
+        /* background-color: #e21b1b; */
+    }
+
+    .Vehictex {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .Vehictex h1{
+        margin-top: 0%;
+        padding-top: 0%;
+        font-size: 0%;
+    }
+
+    .Vehictex p{
+        font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 16px;
+    }
+
+    
+    .Vehicmoveline hr{
+    box-shadow: 2px 2px 5px rgb(132, 132, 239) ;
+    border: rgb(25, 25, 25) solid 2px;
+    width: 80%;
+    }
+
+    .Vehicmove h1{
+    /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+
+    font-size: 20px;
+    }
+    
+    .Vehicmovetrbcon{
+      gap:20px;
+      flex-wrap: wra;
+      height: 100vh;
+      padding-top: 0%;
+      border: 1px solid black;
+      box-shadow: 4px 4px 5px rgb(0, 0, 0);
+
+    }
+
+    .Vehicmovetrb h1{
+        font-size:17px;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    .Vehicmovetrb h5{
+    margin-top: 0%;
+    font-size: 14px;
+    margin-bottom: 1vh;
+    padding-left:2%;
+    }
+
+    .Vehicmovetrb button{
+    font-size: 15px;
+    /* margin: 1px; */
+    border: 1px solid black;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px 1px rgb(132, 132, 239) ;
+    margin-left:2%;
+    }
+
+    .mar marquee{
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+   
+}

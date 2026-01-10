@@ -1,0 +1,657 @@
+
+/* im using Vehicles css for the hero view */
+
+ /* Remove margins */
+.vehicles {
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.Vehicitt{
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 55vh;
+    margin-top: 8px;
+    /* Smooth fade when image changes */
+    transition: background-image 1s ease-in-out;
+    /* box-shadow: 1px 1px 1px 3px rgba(19, 19, 253, 0.2), inset 0 0 5px rgba(10, 26, 143, 0.22); */
+        box-shadow: 4px 4px 5px rgb(0, 0, 0);
+
+    /* object-fit: cover; */
+    z-index: -1;
+    filter: brightness(95%);
+}
+
+  
+
+/* Left image */
+.vehicle-icon {
+    margin-top: 40px;
+    width: 150px;
+}
+ 
+/* Text section */
+.Vehictextt{
+    margin-left: 20px;
+    color: white; /* white text works best on slideshow imgs */
+}
+
+.Vehictex h1 {
+    margin-top: 40px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+}
+
+/* Buttons */
+.btn {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none; 
+    background-color: #e21b1b; 
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 4px; 
+    border: 2px solid white;
+
+}
+
+.btn.secondary {
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.Vehicmoveline hr{
+color: blue;
+border: rgb(44, 43, 43) solid 2px;
+margin-top: 20px;
+width: 60%;
+box-shadow: 2px 2px 2px rgb(132, 132, 239) ;
+margin-left: 0;
+margin-right: 0;
+
+}
+
+.Vehicmove{
+    display: flex;
+    margin-top: 10px;
+}
+
+
+.Vehicmove h1{
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+margin: 0;
+font-size: 15px;
+padding-top: 18px;
+}
+
+    
+
+  .mitwo{
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap:35%;
+    justify-content: center;
+    padding: 0%;
+    margin: 0%;
+  }
+
+  .mitwo h1{
+   font-size: 20px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   padding-bottom: 0%;
+  }
+
+  .mitwo h3{
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 0%;
+    margin-top: 0%;
+    font-size: 10px;
+  }
+
+
+  
+
+  .electric{
+    display: flex;
+  }
+
+
+   .elect{
+    display: flex;
+    /* background-color:rgb(174, 165, 165); */
+    margin-top: 2%;
+   }
+
+   .electric{
+    /* background-image: url("../assets/tooblack.jpg"); */
+    background-repeat: no-repeat;
+    height: 80vh;
+    background-size:30%;
+    width: 290%;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+    /* justify-content: center; */
+   }
+
+   .down{
+    margin-top: 5vh;
+    margin-left: 5%;
+   }
+
+   .electric img{
+    width:65%;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+   }
+
+   .electric h2{
+    padding-top: 20vh;
+    width:38%;
+    font-size: 15px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration:underline;
+   }
+   
+   .electric button{
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+   }
+  
+  
+
+
+
+
+
+
+   /* two */
+
+   .electrictt{
+    display: flex;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+  }
+
+
+   .electt{
+    display: flex;
+    margin-top: 2%;
+   }
+
+   .electrictt{
+    /* background-image: url("../assets/tooblack.jpg"); */
+    background-repeat: no-repeat;
+    height: 80vh;
+    background-size:30%;
+    width: 290%;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+    /* justify-content: center; */
+   }
+
+   .downtt{
+    margin-top: 5vh;
+    margin-left: 5%;
+   }
+
+   .electrictt img{
+    margin-left: 25%;
+    width:65%;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+   }
+
+   .electrictt h2{
+    padding-top: 20vh;
+    width:38%;
+    font-size: 15px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration:underline;
+   }
+   
+   .electrictt button{
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+   }
+
+
+
+
+
+
+
+
+
+
+  .efficient{
+    margin-top:25vh;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+  }
+
+  .efficient h1{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
+    padding-left:1%;
+    margin-top: 1%;
+  }
+
+  .efficient h3{
+    padding-bottom: 1%;
+    padding-left: 1%;
+    text-align: center;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .redcar{
+    display: flex;
+    margin-top: 10vh;
+  }
+
+  .redcar img{
+    width: 35%;
+    height:65vh;
+    margin-left:10%;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+    filter: brightness(70%);
+  }
+
+  .rengg{
+    margin-left: 15%;
+  }
+
+  .redcar h2{
+    width:65%;
+    padding-top:18vh;
+    font-size: 15px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration:underline;
+  }
+
+  .redcar button{
+   box-shadow: 4px 4px 5px rgb(0, 0, 0);
+  }
+
+
+  .starting{
+    margin-top:10vh;
+    /* width: 110%; */
+    height:85vh;
+    text-overflow:inherit;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+  }
+
+  .starting img{
+    margin-top: 2vh;
+    margin-left: 70%;
+    height: 56vh;
+    width:27%;
+    justify-content: center;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+  }
+
+  .starting h2{
+    width:65%;
+    padding-top:2vh;
+    padding-left: 11%;
+    font-size: 15px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration:underline;
+  }
+
+  .starting button{
+   box-shadow: 1px 1px 1px 2px rgba(19, 19, 253, 0.2), inset 0 0 5px rgba(10, 26, 143, 0.22) ;
+   margin-left: 2%;
+  }
+
+  .starting h1{
+    padding-left: 78%;
+    padding-top: 0%;
+    margin-top: 0%;
+    gap: 0%;
+  }
+
+
+  .somettppp{
+    margin-top:5vh;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+    height: 95vh;
+  }
+
+  .somettppp img{
+    margin-top: 5vh;
+    margin-left: 10%;
+    width:25%;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+  }
+
+  .somettppp h2{
+    font-size: 15px;
+    width: 35%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 2%;
+  }
+
+  .somettppp button{
+    margin-left:1%;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px 2px rgba(19, 19, 253, 0.2), inset 0 0 5px rgba(10, 26, 143, 0.22) ;
+  }
+
+  .Autopilot{
+    margin-top: 4vh;
+    font-size: 10px;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+ 
+
+
+
+  /* Mobile */
+@media (max-width: 560px) {
+
+.Vehiclesoneitc{
+   display: none;
+}
+
+.Vehictextt{
+  /* background-color: aqua; */
+  margin-left: 0%;
+}
+
+ .buttott{
+        display: flex;
+        width: 115%;
+        /* background-color: #e21b1b; */
+    }
+
+   .Vehicmovett img{
+    display: none;
+   }
+    
+  .mitwo{
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap:8%;
+    justify-content: center;
+    padding: 0%;
+    /* box-shadow: 4px 4px 5px rgb(0, 0, 0); */
+    margin: 0%;
+  }
+
+  .mitwo h1{
+   font-size: 20px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   padding-bottom: 0%;
+  }
+
+  .mitwo h3{
+    font-size: 15px;
+    margin-top: 0%;
+  }
+
+
+  /* .elect{
+    height: 90vh;
+  } */
+  .electric{
+    display: grid;
+  }
+
+   /* .elect{
+    display: flex;
+    background-color:rgb(174, 165, 165);
+    margin-top: 2%;
+   } */
+
+   .electric h2{
+    margin-top: 0%;
+    padding-top: 0%;
+   }
+
+   .hb{
+    margin-top: 0%;
+    padding: 0%;
+    /* background-color: blue; */
+    height: 5vh;
+   }
+   
+   
+   .electric{
+    background-repeat: no-repeat;
+    height: 80vh;
+    /* color: white; */
+    background-size:30%;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+   } 
+
+
+   .down{
+    width: 45%;
+    margin-top: 5vh;
+    margin-left: 5%;
+    height:42vh;
+    background-color: #e21b1b;
+   }
+
+   /* .electric{
+   } */
+
+   .down img{
+    width:200%;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+   }
+
+   .electric h2{
+    padding-top:0vh;
+    padding-left: 8%;
+    width:80%;
+    font-size: 17px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration:underline;
+   }
+   
+   .electric button{
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+    margin-left: 5%;
+    font-size: 14px;
+   }
+
+
+
+   /* two */
+
+   .electrictt{
+    display: grid;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+  }
+
+
+   .electt{
+    display: flex;
+    margin-top: 2%;
+   }
+
+   .electrictt{
+    /* background-image: url("../assets/tooblack.jpg"); */
+    background-repeat: no-repeat;
+    height:70vh;
+    background-size:30%;
+    width: 290%;
+    /* background-color: #e21b1b; */
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+    /* justify-content: center; */
+   }
+
+   .downtt{
+    margin-top: 5vh;
+    margin-left: 5%;
+    /* background-color: #e21b1b; */
+    height:35vh;
+   }
+
+   .electrictt img{
+    margin-left:0%;
+    width:95%;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+   }
+
+   .electrictt h2{
+    padding-top:5vh;
+    padding-left: 8%;
+    width:75%;
+    font-size: 17px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration:underline;
+   }
+   
+   .electrictt button{
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+    margin-left: 70%;
+    font-size: 14px;
+   }
+
+
+
+
+
+
+
+   .efficient{
+    margin-top:2vh;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+  }
+
+  .efficient h1{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
+    /* padding-left:3%; */
+    text-align: center;
+    padding-top: 2vh;
+    font-size:23px;
+    margin-top: 1%;
+  }
+
+  .efficient h3{
+    padding-bottom: 1%;
+    padding-left: 1%;
+    text-align: center;
+    width: 95%;
+    font-size:18px;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+
+
+
+  .redcar{
+    display: grid;
+    margin-top:2vh;
+  }
+
+  .redcar img{
+    margin-top: 5vh;
+    width: 95%;
+    height:60vh;
+    margin-left:4%;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+  }
+
+  .rengg{
+    margin-left: 15%;
+  }
+
+  .redcar h2{
+    width:65%;
+    padding-top:4vh;
+    font-size: 17px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration:underline;
+  }
+
+  .redcar button{
+   box-shadow: 4px 4px 5px rgb(0, 0, 0);
+   font-size: 14px;
+  }
+
+
+   .starting{
+    margin-top:2vh;
+    /* width: 110%; */
+    height:75vh;
+    text-overflow:inherit;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+  }
+
+  .starting img{
+    margin-top: 5vh;
+    margin-left:5%;
+    height:45vh;
+    width:87%;
+    justify-content: center;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+  }
+
+  .starting h2{
+    width:65%;
+    padding-top:2vh;
+    padding-left: 11%;
+    font-size:17px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration:underline;
+  }
+
+  .starting button{
+  box-shadow: 4px 4px 5px rgb(0, 0, 0);
+   margin-left:4%;
+   font-size: 14px;
+  }
+
+  .starting h1{
+    padding-left:58%;
+    padding-top: 0%;
+    font-size: 22px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 0%;
+    gap: 0%;
+  }
+
+
+  .somettppp{
+    margin-top:2vh;
+    /* display: grid; */
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+    height: 75vh;
+    /* background-color: #e21b1b; */
+  }
+
+  .somettppp img{
+    margin-top: 5vh;
+    margin-left:6%;
+    /* margin-bottom: 0%; */
+    width:88%;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+  }
+
+  .somettppp h2{
+    font-size: 17px;
+    width:65%;
+    text-decoration: underline;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left:10%;
+  }
+
+  .somettppp button{
+    margin-left:5%;
+    font-size:14px;
+    /* border: 1px solid black; */
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+
+  }
+
+  .Autopilot{
+    margin-top: 4vh;
+    font-size: 13px;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+ 
+}
