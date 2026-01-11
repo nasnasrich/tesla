@@ -2,7 +2,7 @@ import DashBoard from './Pages/DashBoard'
 import { Route, Routes } from 'react-router-dom'
 import Nav from "./Component/Nav"
 import Card from './Component/Card'
-import Login from './Pages/login'
+import Login from "./Pages/Login";
 import Registration from './Pages/Registration'
 import Hero from './Component/Hero'
 import Home from './Component/Home'
