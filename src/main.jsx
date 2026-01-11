@@ -1,14 +1,18 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import { CartProvider } from "./context/CartContext";
-import './index.css'
-import App from './App.jsx'
 
-createRoot(document.getElementById('root')).render(
-   <BrowserRouter>
-   <CartProvider>
-    <App />
-    </CartProvider>
-  </BrowserRouter>
-)
+// main.jsx or index.jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import { CartProvider } from "./context/CartContext"; // ✅ Import here
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <CartProvider> {/* ✅ Wrap App with CartProvider */}
+        <App />
+      </CartProvider>
+    </BrowserRouter>
+  </React.StrictMode>
+);
+
