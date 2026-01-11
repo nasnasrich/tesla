@@ -4,6 +4,7 @@
   margin-bottom: 1vh;
   box-shadow: 4px 4px 5px rgb(0, 0, 0);
   background: #f4f7fb;
+  color: white;
   display: flex;
   justify-content: center;
   padding: 40px 16px;
@@ -23,10 +24,13 @@
 .smart-panel h1{
   font-family: 'Times New Roman', Times, serif;
   text-decoration: underline;
+  color: black;
 }
 
 .tracking-guide p{
   font-size: 18px;
+  color: black;
+  text-decoration: underline;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -62,7 +66,12 @@
   margin-bottom: 16px;
   box-shadow: transparent;
   box-shadow: 4px 4px 5px rgb(0, 0, 0);
-  background-image: url(../assets/trackingpic.jpg);
+  background-image: url(../assets/comply.jpg);
+   /* filter: brightness(40%); */
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 
@@ -95,4 +104,19 @@
 @keyframes pulse {
   0% { r: 6; opacity: 1; }
   100% { r: 30; opacity: 0; }
+}
+
+
+
+  /* Mobile */
+@media (max-width: 560px) {
+
+.tracking-guide p{
+  width: 75%;
+  font-size: 17px;
+  color: black;
+  text-decoration: underline;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family:Georgia, 'Times New Roman', Times, serif; */
+}  
 }

@@ -61,7 +61,7 @@ const Offer = () => {
       });
   };
 
-  const message = encodeURIComponent(`Hello my gee ${formData.user_name}. Please send price and details`);
+  const message = encodeURIComponent(`Hello, I’m interested in the Tesla Technology & Innovation Reward Program. ${formData.user_name}`);
 
   return (
     <div className="offer-page">
