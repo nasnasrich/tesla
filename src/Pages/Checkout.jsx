@@ -9,7 +9,7 @@ import {
   Paper,
   CircularProgress,
 } from "@mui/material";
-import { useCart } from "../context/CartContext";
+import { useCart } from '../context/CartContext';
 import { useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 
