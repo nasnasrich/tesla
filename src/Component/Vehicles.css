@@ -99,7 +99,7 @@ padding-top: 18px;
     box-shadow: 4px 4px 5px rgb(0, 0, 0);
     padding-top: 15px;
     padding-bottom: 15px;
-    margin-left: 2px;
+    margin-left: 3px;
     margin-right: 2px;
     border: 1px solid blue;
 }
@@ -107,15 +107,17 @@ padding-top: 18px;
 
 .Vehicmovetrb h1{
     font-size: 15px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* font-family: none; */
     margin-bottom: 0%;
 }
+
+
 
 .Vehicmovetrb h5{
     margin-top: 0%;
     margin-bottom: 0%;
-    padding-left:2%;
-    font-size: 12px;
+    padding-left:3%;
+    font-size: 11px;
 }
 
 .Vehicmovetrb button{
@@ -246,8 +248,8 @@ margin-left: 4%;
     }
 
     .Vehicmovetrb h1{
-        font-size:17px;
-        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size:15px;
+        /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
     }
     
     .Vehicmovetrb h5{

@@ -20,7 +20,7 @@ import { Unarchive } from '@mui/icons-material';
 
 
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../Context/CartContext";
 
 
 
@@ -161,12 +161,7 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
-
-
-
-    
        
-
 
 
 

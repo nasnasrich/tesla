@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Box, Button, Card, CardMedia, CardContent, Typography, Snackbar } from '@mui/material'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
-import { useCart } from '../context/CartContext'
+import { useCart } from '../Context/CartContext'
 import ProductModal from '../Component/ProductModal'
 import './WomenCategory.css'
 
