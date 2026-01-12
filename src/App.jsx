@@ -6,7 +6,8 @@ import Login from "./Pages/login";
 import Registration from './Pages/Registration'
 import Hero from './Component/Hero'
 import Home from './Component/Home'
-import Companyreviews from './Component/companyreviews'
+import CompanyReviews from "./Component/CompanyReviews.jsx";
+
 import Vehicles from './Component/vehicles'
 import Formemployment from './Component/Formemployment'
 import Ordernow from './Component/Ordernow'
@@ -35,7 +36,7 @@ function App() {
   <Route path='/Registration' element = {<Registration/>}/>
   <Route path='Hero' element = {<Hero/>}/>
   <Route path='/Home' element = {<Home/>}/>
-  <Route path='/Companyreviews' element = {<Companyreviews/>}/>
+  <Route path="/Companyreviews" element={<CompanyReviews />} />
   <Route path='/Vehicles' element = {<Vehicles/>}/>
   <Route path='/Formemployment' element = {<Formemployment/>}/>
   <Route path='/Ordernow' element = {<Ordernow/>}/>
