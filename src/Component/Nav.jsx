@@ -20,7 +20,7 @@ import { Unarchive } from '@mui/icons-material';
 
 
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { useCart } from "../Context/CartContext";
+import { useCart } from "../context/CartContext";
 
 
 
