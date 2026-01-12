@@ -1,22 +1,22 @@
-import DashBoard from './Pages/DashBoard'
-import { Route, Routes } from 'react-router-dom'
-import Nav from "./Component/Nav"
-import Card from './Component/Card'
-import Login from "./Pages/login";
-import Registration from './Pages/Registration'
-import Hero from './Component/Hero'
-import Home from './Component/Home'
+import DashBoard from "./Pages/DashBoard.jsx";
+import { Route, Routes } from "react-router-dom";
+import Nav from "./Component/Nav.jsx";
+import Card from "./Component/Card.jsx";
+import Login from "./Pages/login.jsx";
+import Registration from "./Pages/Registration.jsx";
+import Hero from "./Component/Hero.jsx";
+import Home from "./Component/Home.jsx";
 import CompanyReviews from "./Component/CompanyReviews.jsx";
+import Vehicles from "./Component/Vehicles.jsx";
+import Formemployment from "./Component/Formemployment.jsx";
+import Ordernow from "./Component/Ordernow.jsx";
+import TeslaSalaries from "./Component/TeslaSalaries.jsx";
+import Cart from "./Pages/Cart.jsx";
+import Checkout from "./Pages/Checkout.jsx";
+import WomenCategory from "./Pages/WomenCategory.jsx";
+import Offer from "./Component/Offer.jsx";
+import TrackingPage from "./Component/TrackingPage.jsx";
 
-import Vehicles from './Component/vehicles'
-import Formemployment from './Component/Formemployment'
-import Ordernow from './Component/Ordernow'
-import TeslaSalaries from "./Component/TeslaSalaries"
-import Cart from "./Pages/Cart";
-import Checkout from "./Pages/Checkout";
-import WomenCategory from "./Pages/WomenCategory";
-import Offer from "./Component/Offer";
-import TrackingPage from './Component/TrackingPage';
 
 
 
