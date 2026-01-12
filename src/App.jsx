@@ -4,7 +4,7 @@ import Nav from "./Component/Nav.jsx";
 import Card from "./Component/Card.jsx";
 import Hero from "./Component/Hero.jsx";
 import Home from "./Component/Home.jsx";
-import CompanyReviews from "./Component/CompanyReviews.jsx";
+import Companyreviews from "./Component/Companyreviews.jsx";
 import Vehicles from "./Component/Vehicles.jsx";
 import Formemployment from "./Component/Formemployment.jsx";
 import Ordernow from "./Component/Ordernow.jsx";
@@ -30,8 +30,7 @@ function App() {
         <Route path="/card" element={<Card />} />
         <Route path="/hero" element={<Hero />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/companyreviews" element={<CompanyReviews />} />
-        <Route path="/vehicles" element={<Vehicles />} />
+        <Route path="/Companyreviews" element={<Companyreviews />} />        <Route path="/vehicles" element={<Vehicles />} />
         <Route path="/formemployment" element={<Formemployment />} />
         <Route path="/ordernow" element={<Ordernow />} />
         <Route path="/womencategory" element={<WomenCategory />} />
