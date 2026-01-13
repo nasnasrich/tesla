@@ -495,7 +495,7 @@ padding-top: 18px;
    }
 
    .electrictt h2{
-    padding-top:10vh;
+    padding-top:12vh;
     padding-left: 8%;
     width:75%;
     font-size: 17px;
@@ -506,6 +506,7 @@ padding-top: 18px;
    .electrictt button{
     box-shadow: 4px 4px 5px rgb(0, 0, 0);
     margin-left: 70%;
+    margin-bottom: 2vh;
     font-size: 14px;
    }
 
