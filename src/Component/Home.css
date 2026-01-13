@@ -922,7 +922,7 @@ margin-left: 8px;
 }
 
 .SHowH1{
-  margin-top: 23vh;
+  margin-top: 30vh;
   margin-left: 2%;
   padding-left: 0%;
   width: 95%;
@@ -989,7 +989,7 @@ text-decoration: none;
 .TeasA{
   margin-top: 2vh;
   margin-left:8%;
-  width: 130%;
+  width: 145%;
   padding-top: 5%;
   box-shadow: 4px 4px 5px rgb(30, 30, 31);
   border-radius: 3px;
@@ -1007,7 +1007,7 @@ text-decoration: none;
 
 
 .TeasB{
-  width: 130%;
+  width: 145%;
   margin-left:8%;
   box-shadow: 4px 4px 5px rgb(30, 30, 31);
   border-radius: 3px;
@@ -1024,7 +1024,7 @@ width: 225px;
 }
 
 .TeasC{
-  width: 130%;
+  width: 145%;
   margin-left:8%;
   box-shadow: 4px 4px 5px rgb(30, 30, 31);
   border-radius: 3px;
@@ -1041,7 +1041,7 @@ margin-top: 4vh;
 
 .TeasD{
   margin-left:8%;
-  width:130%;
+  width:145%;
   box-shadow: 4px 4px 5px rgb(30, 30, 31);
   border-radius: 3px;
 }
@@ -1058,7 +1058,7 @@ height:22vh;
 .TeasE{
   margin-left:8%;
   margin-bottom: 2vh;
-  width: 130%;
+  width: 145%;
   box-shadow: 4px 4px 5px rgb(30, 30, 31);
   border-radius: 3px;
 }
@@ -1153,7 +1153,7 @@ font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 .StudentOpportunities{
   display: grid;
   justify-content: none;
-  height:100vh;
+  height:110vh;
   gap: 0px;
   margin-top: 1vh;
   padding-top: 2vh;
@@ -1167,7 +1167,7 @@ font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 .StudentA{
   width:95%;
-  height: 42vh;
+  height: 50vh;
   margin-top: 0%;
   padding-top: 0%;
   margin-left:2%;
@@ -1244,7 +1244,7 @@ margin-top:2%;
 .videoimg{
   position: relative;
   width:91%;
-  height:110vh;        /* full screen height */
+  height:120vh;        /* full screen height */
   overflow: hidden;
   margin-top: 0%;
   color: rgb(0, 0, 0);
@@ -1274,7 +1274,7 @@ width: 85%;
 font-size: 15px;
 margin-bottom: 0%;
 padding-bottom: 0%;
-height: 60vh;
+height: 70vh;
 }
 
 .videoimg video{
@@ -1334,7 +1334,7 @@ padding-left:2%;
   margin-top: 2%;
   margin-left:4%;
   margin-bottom: 0%;
-  height:100vh;
+  height:113vh;
 }
 
 .participates{
