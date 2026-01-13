@@ -175,7 +175,7 @@ const Login = () => {
             >
               Don’t have an account?{" "}
               <Link
-                to="/Hero" /*Registration##*/
+                to="/Registration"
                 style={{
                   color: "#1976d2",
                   fontWeight: 600,
