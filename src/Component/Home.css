@@ -988,7 +988,7 @@ text-decoration: none;
 
 .TeasA{
   margin-top: 2vh;
-  margin-left:8%;
+  margin-left:5%;
   width: 145%;
   padding-top: 5%;
   box-shadow: 4px 4px 5px rgb(30, 30, 31);
@@ -1008,7 +1008,7 @@ text-decoration: none;
 
 .TeasB{
   width: 145%;
-  margin-left:8%;
+  margin-left:5%;
   box-shadow: 4px 4px 5px rgb(30, 30, 31);
   border-radius: 3px;
 }
@@ -1025,7 +1025,7 @@ width: 225px;
 
 .TeasC{
   width: 145%;
-  margin-left:8%;
+  margin-left:5%;
   box-shadow: 4px 4px 5px rgb(30, 30, 31);
   border-radius: 3px;
 }
@@ -1040,7 +1040,7 @@ margin-top: 4vh;
 }
 
 .TeasD{
-  margin-left:8%;
+  margin-left:5%;
   width:145%;
   box-shadow: 4px 4px 5px rgb(30, 30, 31);
   border-radius: 3px;
@@ -1056,7 +1056,7 @@ height:22vh;
 }
 
 .TeasE{
-  margin-left:8%;
+  margin-left:5%;
   margin-bottom: 2vh;
   width: 145%;
   box-shadow: 4px 4px 5px rgb(30, 30, 31);
@@ -1314,7 +1314,7 @@ margin-bottom: 0vh;
 .videomeB h4{
 text-align: start;
 width:87%;
-height: 26vh;
+height: 25vh;
 text-decoration: none;
 font-size:19px;
 /* padding-top: 0%; */

@@ -69,7 +69,7 @@ const WomenCategory = () => {
                   setModalOpen(true)
                 }}
               >
-                Add to Cart
+                Order Now
               </Button>
             </CardContent>
           </Card>
@@ -89,7 +89,7 @@ const WomenCategory = () => {
         open={openSnackbar}
         autoHideDuration={3000}
         onClose={() => setOpenSnackbar(false)}
-        message={currentProduct ? `Added ${currentProduct.name} to your cart` : ''}
+        message={currentProduct ? `Added ${currentProduct.name} to your order` : ''}
       />
     </Box>
     </>

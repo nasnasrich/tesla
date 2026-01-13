@@ -35,7 +35,7 @@ function Vehicles() {
 
   const handleAddToCart = (product) => {
     addToCart(product);
-    setCartAlert(`Added ${product.name} to your cart`);
+    setCartAlert(`Added ${product.name} to your order`);
     setTimeout(() => setCartAlert(""), 2500);
   };
 
@@ -185,7 +185,7 @@ function Vehicles() {
             <Link to="/Companyreviews">
               <button>Learn</button>
             </Link>
-            <button onClick={() => handleAddToCart(vehicle)}>Add to cart</button>
+            <button onClick={() => handleAddToCart(vehicle)}>Order Now</button>
           </div>
         ))}
       </div>

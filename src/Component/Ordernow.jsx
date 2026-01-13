@@ -53,7 +53,7 @@ function Ordernow() {
   // Add to cart
   const handleAddToCart = (product) => {
     addToCart({ ...product, quantity: 1 });
-    setCartAlert(`Added ${product.name} to your cart`);
+    setCartAlert(`Added ${product.name} to your order`);
     setTimeout(() => setCartAlert(""), 2500);
     setModalOpen(false);
   };
@@ -127,7 +127,7 @@ function Ordernow() {
           </div>
           <div className="hb">
             <h2><strong>{vehicles[0].description} — starting at ${vehicles[0].price.toLocaleString()}.</strong></h2>
-            <button onClick={() => openModal(vehicles[0])}>Add to cart</button>
+            <button onClick={() => openModal(vehicles[0])}>Order Now</button>
           </div>
         </div>
       </div>
@@ -139,7 +139,7 @@ function Ordernow() {
           </div>
           <div>
             <h2><strong>{vehicles[1].description} — starting at ${vehicles[1].price.toLocaleString()}.</strong></h2>
-            <button onClick={() => openModal(vehicles[1])}>Add to cart</button>
+            <button onClick={() => openModal(vehicles[1])}>Order Now</button>
           </div>
         </div>
       </div>
@@ -148,21 +148,21 @@ function Ordernow() {
         <img src={redcar} alt="Tesla Model 3 Standard" onClick={() => openModal(vehicles[2])} />
         <div className="rengg">
           <h2><strong>{vehicles[2].description} — starting at ${vehicles[2].price.toLocaleString()}.</strong></h2>
-          <button onClick={() => openModal(vehicles[2])}>Add to cart</button>
+          <button onClick={() => openModal(vehicles[2])}>Order Now</button>
         </div>
       </div>
 
       <div className="starting">
         <img src={wits} alt="Tesla Model 3 Wits" onClick={() => openModal(vehicles[3])} />
         <h2>{vehicles[3].description} — starting at ${vehicles[3].price.toLocaleString()}.</h2>
-        <button onClick={() => openModal(vehicles[3])}>Add to cart</button>
+        <button onClick={() => openModal(vehicles[3])}>Order Now</button>
         <h1>Tesla Model</h1>
       </div>
 
       <div className="somettppp">
         <img src={somet} alt="Tesla Model 3 Somet" onClick={() => openModal(vehicles[4])} />
         <h2>{vehicles[4].description} — starting at ${vehicles[4].price.toLocaleString()}.</h2>
-        <button onClick={() => openModal(vehicles[4])}>Add to cart</button>
+        <button onClick={() => openModal(vehicles[4])}>Order Now</button>
       </div>
 
       <div className="Autopilot">
