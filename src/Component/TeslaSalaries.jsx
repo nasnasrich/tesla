@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./TeslaSalaries.css";
+import Nav from "./Nav"
 
 const jobs = [
   { title: "Software Engineer", salary: 190000, description: "Write Tesla software code." },
@@ -31,6 +32,8 @@ const TeslaSalaries = () => {
   };
 
   return (
+    <>
+    <Nav/>
     <div className="tesla-salaries">
       <div className="salary-page">
         <header>
@@ -77,6 +80,7 @@ const TeslaSalaries = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

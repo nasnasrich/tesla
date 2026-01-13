@@ -1,6 +1,7 @@
 import "./Formemployment.css";
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import Nav from "./Nav";
 
 import tgima from "../assets/tgima.png";
 import aihand from "../assets/aihand.png";
@@ -66,13 +67,16 @@ export default function EmploymentForm() {
       : "bg-white border shadow";
 
   return (
+    <>
+    <Nav/>
+
     <div className="form">
       <div className="Header">
         <h1>Employment Application</h1>
 
         <div className="flexrounded-lg">
           <img src={tgima} alt="Tesla Icon" className="w-10" />
-          <img src={aihand} alt="AI Icon" className="w-10" />
+          <img src={aihand} alt="AI Icon" className="w-11" />
         </div>
       </div>
 
@@ -224,5 +228,6 @@ export default function EmploymentForm() {
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -6,11 +6,14 @@ import works from "../assets/works.jpg";
 import { Link } from "react-router-dom";
 import { Message } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';   // ✅ added
+import Nav from "./Nav"
 
 function Companyreviews() {
   const navigate = useNavigate();                 // ✅ added
 
   return (
+    <>
+    <Nav/>
     <div className='companyreviews'>
       <div className='companyre'>
         <h1>Compare Models Review</h1>
@@ -29,7 +32,7 @@ function Companyreviews() {
       <div className='companyreA'>
         <div className='comA'>
           <Link to="/Hero">
-          <img src={iv} alt="Tesla Icon" style={{ marginTop: 10, width: 110 }} />
+          <img src={iv} alt="Tesla Icon" />
           </Link>
         </div>
 
@@ -62,7 +65,7 @@ function Companyreviews() {
               <p>No reviews yet. Be the first to share your thoughts!</p>
              </div>
             
-          <div className='form'>
+          <div className='formm'>
             {/* <br/> */}
             <input type="text" placeholder='message...' />
 
@@ -77,7 +80,7 @@ function Companyreviews() {
             </a>
           </div>
 
-          <div>
+          <div className='pricesss'>
             <p>1 Prices listed do not include Destination and Order Fees, taxes and other fees. Subject to change. Vehicle shown has upgrades that will increase the price. Prices including the Destination and Order fees but excluding taxes and other fees are as follows:</p>
             <p>Model Y Standard Rear-Wheel Drive starts at $41,630, Model Y Premium Rear-Wheel Drive starts at $46,630, Model Y Premium All-Wheel Drive starts at $50,630 and Model Y Performance All-Wheel Drive starts at $59,130.</p>
             <p>Model 3 Standard Rear-Wheel Drive starts at $38,630, Model 3 Premium Rear-Wheel Drive starts at $44,130, Model 3 Premium All-Wheel Drive starts at $49,130, Model 3 Performance All-Wheel Drive starts at $56,630,</p>
@@ -91,6 +94,7 @@ function Companyreviews() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import technology from "../assets/technology.png";
 import whatsappoffer from "../assets/whatsappoffer.jpg";
+import Nav from "./Nav";
 
 import "./Offer.css";
 
@@ -64,6 +65,9 @@ const Offer = () => {
   const message = encodeURIComponent(`Hello, I’m interested in the Tesla Technology & Innovation Reward Program. ${formData.user_name}`);
 
   return (
+    <>
+    <Nav/>
+
     <div className="offer-page">
       {/* HERO */}
       <section className="offer-hero">
@@ -243,6 +247,7 @@ const Offer = () => {
         <p>© 2026 Technology & Innovation Reward Program. All rights reserved.</p>
       </footer>
     </div>
+    </>
   );
 };
 

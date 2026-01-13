@@ -4,6 +4,7 @@ import iv from "../assets/iv.png";
 import gozie from "../assets/gozie.png";
 import { Link } from "react-router-dom";
 import ProductModal from '../Component/ProductModal';
+import Nav from "./Nav";
 
 // CART
 import { useCart } from "../context/CartContext";
@@ -111,6 +112,8 @@ function Vehicles() {
   ];
 
   return (
+    <>
+    <Nav/>
     <div>
       {/* Cart Alert */}
       {cartAlert && <div className="cart-alert">{cartAlert}</div>}
@@ -123,7 +126,7 @@ function Vehicles() {
         <div className="Vehiclesoneimg">
           <img src={iv} alt="Tesla Icon" className="vehicle-icon" />
         </div>
-        <div className="Vehictex">
+        <div className="Vehictexx">
           <h1>Electric Vehicles, Reinvented</h1>
           <p>
             Step into a world of smart engineering and powerful innovation—welcome
@@ -207,6 +210,7 @@ function Vehicles() {
         </marquee>
       </div>
     </div>
+    </>
   );
 }
 

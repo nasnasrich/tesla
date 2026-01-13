@@ -623,9 +623,7 @@ padding-top: 0%;
 .feull h4{
   text-align: center;
   text-decoration: underline;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 13px;
-  /* width: ; */
+  font-size: 15px;
 }
 
 
@@ -797,7 +795,6 @@ padding-top: 0%;
 @media (max-width: 560px) {
 
   .hero-container{
-    /* background-color: aqua; */
     display: flex;
   }
 
@@ -820,6 +817,7 @@ padding-top: 0%;
 .insideindexA h2{
  display: flex;
  width: 100px;
+ font-family: none;
 }
   .vehicle-con{
     margin-top: 0%;
@@ -879,16 +877,20 @@ padding-top: 0%;
   color: white;
 }
 
+.ApplyA{
+  margin-left: 0%;
+  padding-left: 0%;
+
+}
 
 .ApplyA p{
 padding-top: 10px;
  width: 78%;
  font-size: 20px;
  padding-left: 5%;
- margin-left:30px;
+ margin-left:20px;
  margin-bottom: 4px;
- box-shadow:2px 2px 2px 2px rgb(30, 30, 31);
-
+ box-shadow:2px 2px 2px 2px rgb(0, 0, 0);
 }
 
 .ApplyA button{
@@ -912,7 +914,6 @@ border-radius: 2px;
  padding-right: 10px;
  padding-top: 8px;
  padding-bottom: 8px;
- /* box-shadow:2px 2px 2px 2px rgb(30, 30, 31); */
 }
 
 .ApplyB input{
@@ -920,6 +921,12 @@ border-radius: 2px;
 margin-left: 8px;
 }
 
+.SHowH1{
+  margin-top: 23vh;
+  margin-left: 2%;
+  padding-left: 0%;
+  width: 95%;
+}
 
 .SHowH1 h1{
 background: none;
@@ -928,30 +935,30 @@ border: 1px solid black;
 padding-top: 2%;
 padding-bottom: 2%;
 margin-top:5%;
-margin-left:5%;
+margin-left:0%;
 margin-bottom: 1vh;
-width: 90%;
+/* width: 90%; */
 text-decoration: none;
 }
 
 
 
 .Showcasing{
-  width:90%;
+  width:95%;
   background: none;
   color: black;
   /* box-shadow:2px 2px 2px 2px rgb(30, 30, 31); */
   box-shadow: none;
-    margin-left:5%;
+  margin-left:2%;
   border: none;
   display: grid;
   margin-bottom: 2vh;  
 }
 
-.ShowcasingA{
-  /* background-color: none; */
+.ShowcasingA {
+  background-color: none;
   justify-content: start;
-  /* margin-left:0px; */
+  margin-left:0px;
   background: none;
   color: black;
   margin-top: 0vh;
@@ -981,7 +988,7 @@ text-decoration: none;
 
 .TeasA{
   margin-top: 2vh;
-  margin-left:15%;
+  margin-left:8%;
   width: 130%;
   padding-top: 5%;
   box-shadow: 4px 4px 5px rgb(30, 30, 31);
@@ -1001,7 +1008,7 @@ text-decoration: none;
 
 .TeasB{
   width: 130%;
-  margin-left:15%;
+  margin-left:8%;
   box-shadow: 4px 4px 5px rgb(30, 30, 31);
   border-radius: 3px;
 }
@@ -1018,7 +1025,7 @@ width: 225px;
 
 .TeasC{
   width: 130%;
-  margin-left:15%;
+  margin-left:8%;
   box-shadow: 4px 4px 5px rgb(30, 30, 31);
   border-radius: 3px;
 }
@@ -1033,7 +1040,7 @@ margin-top: 4vh;
 }
 
 .TeasD{
-  margin-left:15%;
+  margin-left:8%;
   width:130%;
   box-shadow: 4px 4px 5px rgb(30, 30, 31);
   border-radius: 3px;
@@ -1049,7 +1056,7 @@ height:22vh;
 }
 
 .TeasE{
-  margin-left:15%;
+  margin-left:8%;
   margin-bottom: 2vh;
   width: 130%;
   box-shadow: 4px 4px 5px rgb(30, 30, 31);
@@ -1152,6 +1159,7 @@ font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding-top: 2vh;
   width: 91%;
   margin-left: 3%;
+  margin-bottom: 3%;
   border: none;
   color:white;
   background-color: white;
@@ -1160,6 +1168,8 @@ font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 .StudentA{
   width:95%;
   height: 42vh;
+  margin-top: 0%;
+  padding-top: 0%;
   margin-left:2%;
   margin-bottom: 0%;
   background-color:rgb(93, 91, 86);
@@ -1234,12 +1244,12 @@ margin-top:2%;
 .videoimg{
   position: relative;
   width:91%;
-  height:96vh;        /* full screen height */
+  height:110vh;        /* full screen height */
   overflow: hidden;
-  margin-top: 25px;
+  margin-top: 0%;
   color: rgb(0, 0, 0);
   display: grid;
-  margin-left:3%;
+  margin-left:4%;
   /* margin: 25px; */
   margin-bottom: 15px;
 }
@@ -1264,7 +1274,7 @@ width: 85%;
 font-size: 15px;
 margin-bottom: 0%;
 padding-bottom: 0%;
-height: 50vh;
+height: 60vh;
 }
 
 .videoimg video{
@@ -1291,7 +1301,8 @@ margin-bottom: 0vh;
 }
  .videomeB h2{
   text-decoration: none;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: none;
+  /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
   padding-top: 0%;
   width: 59%;
   padding-left: 4%;
@@ -1303,6 +1314,7 @@ margin-bottom: 0vh;
 .videomeB h4{
 text-align: start;
 width:87%;
+height: 26vh;
 text-decoration: none;
 font-size:19px;
 /* padding-top: 0%; */
@@ -1320,9 +1332,9 @@ padding-left:2%;
 .Teslaparticipates{
   width: 91%;
   margin-top: 2%;
-  margin-left:3%;
+  margin-left:4%;
   margin-bottom: 0%;
-  height:75vh;
+  height:100vh;
 }
 
 .participates{
@@ -1386,8 +1398,9 @@ background-color:none;
 
 .feull h4{
   margin-top: 0%;
-  font-size: 16px;
+  font-size: 17px;
   text-align: center;
+  font-family: none;
 }
 }
 

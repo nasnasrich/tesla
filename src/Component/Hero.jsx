@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import mail from "../assets/mail.png";
 import teslrmodelone from "../assets/teslrmodelone.png";
 import React, { useState, useEffect } from "react";
+import Nav from "./Nav"
 
 
 
@@ -17,7 +18,8 @@ const Hero = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
   
   return (
-
+<>
+<Nav/>
     
     <div className="homee">
       {/* HERO */}
@@ -40,7 +42,7 @@ const Hero = () => {
                       {/* <p>Pure power. Zero emissions. See the new Tesla Models</p> */}
                       <div className="butto">
                         <Link to="/Companyreviews">
-                          <button className="bt">Company Reviewsw</button>
+                          <button className="bt">Company Reviews</button>
                         </Link>
                         <Link to="/TrackingPage">
                           <button className="btn secondary">Track Order</button>
@@ -141,6 +143,7 @@ const Hero = () => {
       </footer>
       </div>
     </div>
+    </>
   );
 };
 

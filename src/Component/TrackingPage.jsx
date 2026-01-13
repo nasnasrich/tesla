@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Polyline, Popup, CircleMarker, useMap 
 import 'leaflet/dist/leaflet.css';
 import L from "leaflet";
 import "./TrackingPage.css";
+import Nav from "./Nav";
 
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
@@ -123,6 +124,8 @@ const TrackingPage = () => {
 
   if (!shipment) {
     return (
+      <>
+      <Nav/>
       <div className="smart-tracking-page">
         <div className="smart-panel">
           <h1>Shipment Tracking</h1>
@@ -136,12 +139,15 @@ const TrackingPage = () => {
           </div>
         </div>
       </div>
+      </>
     );
   }
 
   const current = shipment.route[index];
 
   return (
+    <>
+    <Nav/>
     <div className="smart-tracking-page">
       <div className="smart-panel">
         <h1>Shipment Tracking</h1>
@@ -195,6 +201,7 @@ const TrackingPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

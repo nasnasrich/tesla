@@ -1,7 +1,7 @@
 // src/App.jsx
 import DashBoard from "./Pages/DashBoard.jsx";
 import { Route, Routes } from "react-router-dom";
-import Nav from "./Component/Nav.jsx";
+// import Nav from "./Component/Nav.jsx";
 import Card from "./Component/Card.jsx";
 import Login from "./Pages/login.jsx"; // file is lowercase
 import Registration from "./Pages/Registration.jsx";
@@ -21,7 +21,6 @@ import TrackingPage from "./Component/TrackingPage.jsx";
 function App() {
   return (
     <>
-      <Nav />
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/cart" element={<Cart />} />

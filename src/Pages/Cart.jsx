@@ -5,6 +5,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { useCart } from "../context/CartContext";
+import Nav from "../Component/Nav"
+
 
 
 const Cart = () => {
@@ -23,6 +25,9 @@ const Cart = () => {
   }
 
   return (
+    <>
+    <Nav/>   
+
     <Box sx={{ p: 6 }}>
       <Typography variant="h4" sx={{ mb: 3 }}>Your Cart</Typography>
       <List>
@@ -53,6 +58,7 @@ const Cart = () => {
         <Button variant="contained" color="primary" component={Link} to="/Checkout">Checkout</Button>
       </Box>
     </Box>
+    </>
   );
 };
 

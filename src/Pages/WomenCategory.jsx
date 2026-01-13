@@ -4,6 +4,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import { useCart } from "../context/CartContext"; // lowercase folder
 import ProductModal from '../Component/ProductModal'
 import './WomenCategory.css'
+import Nav from "../Component/Nav";
 
 import TeslaModelSPlaid from '../assets/TeslaModelSPlaid.jpg'
 import TeslaModel3 from '../assets/TeslaModel3.jpg'
@@ -38,6 +39,8 @@ const WomenCategory = () => {
   }
 
   return (
+    <>
+      <Nav/>
     <Box className="women-category-page">
       <div className="products-grid grid-standard">
         {products.map(product => (
@@ -89,6 +92,7 @@ const WomenCategory = () => {
         message={currentProduct ? `Added ${currentProduct.name} to your cart` : ''}
       />
     </Box>
+    </>
   )
 }
 

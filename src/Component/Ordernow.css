@@ -370,15 +370,15 @@ padding-top: 18px;
   .mitwo{
     display: flex;
     /* flex-wrap: wrap; */
+    margin-top: 3vh;
     gap:8%;
     justify-content: center;
     padding: 0%;
     /* box-shadow: 4px 4px 5px rgb(0, 0, 0); */
-    margin: 0%;
   }
 
   .mitwo h1{
-   font-size: 20px;
+   font-size:16px;
    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
    padding-bottom: 0%;
   }
@@ -443,7 +443,7 @@ padding-top: 18px;
    .electric h2{
     padding-top:0vh;
     padding-left: 8%;
-    width:80%;
+    width:95%;
     font-size: 17px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration:underline;
@@ -576,7 +576,7 @@ padding-top: 18px;
    .starting{
     margin-top:2vh;
     /* width: 110%; */
-    height:75vh;
+    height:85vh;
     text-overflow:inherit;
     box-shadow: 4px 4px 5px rgb(0, 0, 0);
   }
@@ -619,7 +619,7 @@ padding-top: 18px;
     margin-top:2vh;
     /* display: grid; */
     box-shadow: 4px 4px 5px rgb(0, 0, 0);
-    height: 75vh;
+    height: 80vh;
     /* background-color: #e21b1b; */
   }
 
@@ -633,7 +633,7 @@ padding-top: 18px;
 
   .somettppp h2{
     font-size: 17px;
-    width:65%;
+    width:85%;
     text-decoration: underline;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-left:10%;

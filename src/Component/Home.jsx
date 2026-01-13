@@ -4,6 +4,7 @@ import nae from "../assets/nae.png";
 import oldpickmon from "../assets/oldpickmon.png";
 import badvide from "../assets/badvide.mp4";
 import { Link } from "react-router-dom";
+import Nav from "./Nav";
 
 
 
@@ -40,6 +41,8 @@ function Home() {
   };
 
   return (
+     <>
+    <Nav/>
   <div className="homepage">
    <div className="hero-container">
   <video className="hero-bg-video" autoPlay loop muted playsInline>
@@ -111,34 +114,34 @@ function Home() {
             <img src={program} alt="Tesla Icon"/>
             <h4>Manufacturing</h4>
             {/* <p>Join a global team of expert engineers, production workers and safety professionals building some of the most exciting vehicles on the planet.</p> */}
-            <h1><Link to="/Hero"> See Opportunities </Link></h1>
+            <h1><Link to="/Companyreviews"> See Opportunities </Link></h1>
           </div>
 
           <div className="TeasB">
             <img src={ussa} alt="Tesla Icon" />
             <h4>Space Systems</h4>
             {/* <p>Discover the engineering roles that support astronaut missions and explore the opportunities available if you wish to apply.</p> */}
-            <h1><Link to="/Hero"> See Opportunities </Link></h1>
+            <h1><Link to="/Companyreviews"> See Opportunities </Link></h1>
           </div>
 
           <div className="TeasC">
             <img src={dsd} alt="Tesla Icon" />
             <h4>Administration</h4>
             {/* <p>Explore opportunities in Corporate, Administrative, and Support roles, helping drive operations, HR, and business growth.</p> */}
-            <h1><Link to="/Hero"> See Opportunities </Link></h1>
+            <h1><Link to="/Companyreviews"> See Opportunities </Link></h1>
           </div>
 
           <div className="TeasD">
             <img src={cellteam} alt="Tesla Icon" />
             <h4>Cell Team</h4>
-            <h1><Link to="/Hero">See Opportunities</Link></h1>
+            <h1><Link to="/Companyreviews">See Opportunities</Link></h1>
           </div>
 
           <div className="TeasE" >
             <img src={hii} alt="Tesla Icon" />
             <h4>Autopilot AI</h4>
             {/* <p>Apply cutting-edge research to advance a future of full self-driving, developing some of the world’s most sophisticated decision-making systems.</p> */}
-            <h1><Link to="/Hero">See Opportunities</Link></h1>
+            <h1><Link to="/Companyreviews">See Opportunities</Link></h1>
           </div>
         </div>
 </div>  
@@ -148,10 +151,8 @@ function Home() {
 <div className='Textdad'>
                       <div className='Textme'>
                         <h4>Featured position</h4>
-                        <Link to="/">
                         <img src={te}  alt="Tesla Icon" style={{ marginTop: 10, width: 110, marginRight: 13, color: "white" }} />
                         Working at Tesla.
-                        </Link>
                       </div>                     
 
              <div className='Textmom'>
@@ -179,10 +180,8 @@ function Home() {
     <div className='WorkingatTesla'>
                       <div className='como'>
                         <h4>Rethink the future</h4>
-                        <Link to="/">
                         <img src={te}  alt="Tesla Icon" style={{ marginTop: 10, width: 110,  marginRight: 13, color: "white" }} />
                         Working at Tesla.
-                        </Link>
                       </div>
                      
 
@@ -269,6 +268,7 @@ function Home() {
           </div>
           
     </div>
+    </>
   );
 }
 

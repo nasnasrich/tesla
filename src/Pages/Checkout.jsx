@@ -12,6 +12,7 @@ import {
 import { useCart } from '../context/CartContext';
 import { useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
+import Nav from "../Component/Nav"
 
 const VALID_PROMO_CODES = ["051085", "1035859"];
 const DISCOUNT_RATE = 0.2;
@@ -99,11 +100,14 @@ const Checkout = () => {
   ];
 
   return (
+    <>
+      <Nav/>
+
     <Box
       sx={{
         minHeight: "100vh",
         padding: "40px 20px",
-        marginTop: "5vh",
+        marginTop: "1vh",
         boxShadow: "5px 5px 5px rgba(30,30,31), inset 0 0 5px rgba(25,25,26,0.22)",
       }}
     >
@@ -115,7 +119,7 @@ const Checkout = () => {
           backgroundColor: "#2f4f4f",
           border: "1px solid rgba(0,0,0,0.3)",
           marginBottom: "5px",
-          fontWeight: 700,
+          fontWeight: 0,
           letterSpacing: "2px",
           paddingTop: "1px",
           paddingBottom: "1px",
@@ -304,6 +308,7 @@ const Checkout = () => {
         </Grid>
       </Grid>
     </Box>
+    </>
   );
 };
 

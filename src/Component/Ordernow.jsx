@@ -11,6 +11,7 @@ import somet from "../assets/somet.jpg";
 import { Link } from "react-router-dom";
 import ProductModal from '../Component/ProductModal';
 import { useCart } from "../context/CartContext";
+import Nav from "./Nav";
 
 // Slideshow images
 import slide1 from "../assets/bieu.jpg";
@@ -28,7 +29,7 @@ function Ordernow() {
 
   // Vehicle data
   const vehicles = [
-    { id: 1, name: "Tesla Model 3", image: tooblack, price: 54990, description: "Base Tesla Model 3 Performance: $54,990 (starting price, before fees/taxes). ", colors: ["Red","Blue","Black","White"], range:410, topSpeed:140 },
+    { id: 1, name: "Tesla Model 3", image: tooblack, price: 54990, description: "Base Tesla Model 3 Performance - starting price, before fees/taxes.", colors: ["Red","Blue","Black","White"], range:410, topSpeed:140 },
     { id: 2, name: "Tesla Model Y", image: TeslaModelYWrapMilitaryGreen, price: 59000, description: "Tesla Model Y Performance - High-Performance Electric SUV.", colors: ["Military Green","Black","White"], range:330, topSpeed:135 },
     { id: 3, name: "Tesla Model 3 Standard", image: redcar, price: 180000, description: "Tesla Semi - All-Electric Heavy-Duty Truck for Modern Freight.", colors: ["Red","Black","White"], range:350, topSpeed:145 },
     { id: 4, name: "Tesla Model 3 Wits", image: wits, price: 120000, description: "Tesla Cybertruck - Foundation Series Bold Design. Electric Power. Launch Edition.", colors: ["White","Black"], range:370, topSpeed:142 },
@@ -58,6 +59,8 @@ function Ordernow() {
   };
 
   return (
+    <>
+    <Nav/>
     <div>
       {/* Cart Alert */}
       {cartAlert && <div className="cart-alert">{cartAlert}</div>}
@@ -153,7 +156,7 @@ function Ordernow() {
         <img src={wits} alt="Tesla Model 3 Wits" onClick={() => openModal(vehicles[3])} />
         <h2>{vehicles[3].description} — starting at ${vehicles[3].price.toLocaleString()}.</h2>
         <button onClick={() => openModal(vehicles[3])}>Add to cart</button>
-        <h1>Efficient Design</h1>
+        <h1>Tesla Model</h1>
       </div>
 
       <div className="somettppp">
@@ -174,6 +177,7 @@ function Ordernow() {
         onAdd={handleAddToCart}
       />
     </div>
+    </>
   );
 }
 

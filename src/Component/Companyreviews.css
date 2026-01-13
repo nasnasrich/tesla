@@ -96,13 +96,13 @@ width: 25%;
  margin-left: 5px;
 }
 
-.form img{
+.formm img{
   width: 2%;
   margin-left: 15px;
 }
 
 
-.form p{
+.formm p{
  text-align: center;
  width: 100%;
 }
@@ -193,7 +193,7 @@ width: 25%;
  border-radius: 2px;
   }
 
-  .form label{
+  .formm label{
     size: 2px;
   }
   
@@ -222,7 +222,7 @@ width: 25%;
   margin-right: 10px;
 }
 
-.form img{
+.formm img{
   width: 3%;
   margin-left: 15px;
 }
@@ -232,23 +232,51 @@ width: 25%;
 @media (max-width: 622px) {
 
   .companyreviews{
-    height: 170vh;
+    height: 230vh;
   }
 
   .companyre h1{
-    text-align: center;
+    text-align: start;
     text-decoration: underline;
     padding-left: 0px;
     font-size: 22px;
   }
 
   .companyre p{
-    text-align: center;
-    width: 83%;
-    padding-left: 24px;
+    text-align: start;
+    width: 95%;
+    padding-left: 0px;
   }
-  .form img{
-    margin-top: 0px;
+
+  .comA img{
+    width: 15%;
+    margin-left: 0%;
+  }
+
+  .formdad{
+   margin-left: 3%;
+  }
+
+  .formdad .formm input{
+    margin-left: 3%;
+  }
+
+  .formdad .pricesss{
+    gap: 0%;
+    width: 95%;
+  }
+
+  .formdad .pricesss p{
+   margin-top: 5vh;
+   text-align: start;
+  }
+
+  .formm{
+    margin-left: 0%;
+  }
+
+  .formm img{
+  margin-top: 0px;
   width: 8%;
   margin-left: 15px;
   margin-bottom: 0%;
@@ -256,14 +284,19 @@ width: 25%;
 
 .reviews p{
   text-decoration: underline;
+  text-align: start;
   margin-top: 20px;
   margin-bottom: 0%;
   padding-bottom: 0%;
   width:50% ;
 }
 
-.dispalchideA h4{
-  text-align: center;
+.dispalchideA{
+  text-align: start;
+  font-family: none;
+  padding-left: 0%;
+  margin-left: 0%;
+  width: 98%;
 }
 
 .comA img{
@@ -271,6 +304,10 @@ width: 25%;
   width: 50px;
 padding-left:10px;
 margin-bottom: 0px;
+}
+
+.feter{
+  margin-top: 4vh;
 }
 
 }
