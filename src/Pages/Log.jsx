@@ -24,21 +24,24 @@ const Log = () => {
   const [error, setError] = useState("");
 
   const handleLogin = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
-    try {
-      await axios.post(`${import.meta.env.VITE_BASE_URL}/api/auth/login`, {
-        email,
-        password,
-      });
-      navigate("/Hero");
-    } catch (err) {
-      setError(err?.response?.data?.error || "Login failed");
-    } finally {
-      setLoading(false);
-    }
-  };
+  e.preventDefault();
+  setLoading(true);
+  setError("");
+
+  try {
+    const res = await axios.post(
+      `${import.meta.env.VITE_BASE_URL}/api/auth/login`,
+      { email, password }
+    );
+
+    navigate("/Hero");
+  } catch (err) {
+    setError(err?.response?.data?.error || "Login failed");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <>
