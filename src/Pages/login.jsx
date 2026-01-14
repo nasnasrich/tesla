@@ -28,7 +28,7 @@ const Login = () => {
     setError("");
 
     try {
-      // ✅ Trim inputs to avoid hidden spaces from mobile keyboards
+      // ✅ Trim inputs to avoid mobile keyboard spaces
       const res = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/api/auth/login`,
         {
@@ -36,22 +36,29 @@ const Login = () => {
           password: password.trim(),
         },
         {
-          timeout: 60000, // ✅ handle slower mobile connections
+          timeout: 60000, // ✅ handle slow mobile connections
         }
       );
 
-      // OPTIONAL: store token if your backend sends it
-      // localStorage.setItem("token", res.data.token);
+      // ✅ Store backend response safely if it sends token
+      if (res.data?.token) localStorage.setItem("token", res.data.token);
 
+      // ✅ Navigate on success
       navigate("/Hero");
     } catch (err) {
-      // ✅ Safely handle all backend error formats
-      const message =
-        err?.response?.data?.message ||
-        err?.response?.data?.error ||
-        "Login failed. Please check your credentials.";
+      // ✅ Safe error handling to prevent [object Object]
+      let message = "Login failed. Please check your credentials.";
 
-      setError(String(message));
+      if (err.response?.data) {
+        if (typeof err.response.data === "string") message = err.response.data;
+        else if (err.response.data.message) message = err.response.data.message;
+        else if (err.response.data.error) message = err.response.data.error;
+        else message = JSON.stringify(err.response.data);
+      } else if (err.message) {
+        message = err.message;
+      }
+
+      setError(message);
     } finally {
       setLoading(false);
     }
