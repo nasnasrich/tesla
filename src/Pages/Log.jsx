@@ -1,49 +1,40 @@
-import Nav from "../Component/Nav"
+import React, { useState } from "react";
+import Navs from "../Component/Navs"
 import {
   Box,
   TextField,
   Button,
   Typography,
   Paper,
+  InputAdornment,
+  IconButton,
   CircularProgress,
 } from "@mui/material";
-import axios from "axios";
+import { Visibility, VisibilityOff, LockOutlined } from "@mui/icons-material";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
-const RegistrationScreen = () => {
+const Log = () => {
   const navigate = useNavigate();
-
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [address, setAddress] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const Register = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
-
     try {
-      await axios.post(
-        "https://fullstack-student-backend.onrender.com/api/auth",
-        {
-          firstName,
-          lastName,
-          email,
-          password,
-          phoneNumber,
-          address,
-        }
-      );
-      navigate("/Login");
+      await axios.post(`${import.meta.env.VITE_BASE_URL}/api/auth/login`, {
+        email,
+        password,
+      });
+      navigate("/Hero");
     } catch (err) {
-      setError(err?.response?.data?.error || "Registration failed");
+      setError(err?.response?.data?.error || "Login failed");
     } finally {
       setLoading(false);
     }
@@ -51,20 +42,20 @@ const RegistrationScreen = () => {
 
   return (
     <>
-    <Nav/>
+    <Navs/>
     <Box
       sx={{
-        minHeight: "100dvh",
-        width: "100%",
+        minHeight: "98dvh",
         marginTop: "1vh",
         boxShadow: "5px 5px 5px rgb(30, 30, 31)",
+        width: "100%",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         background: "linear-gradient(135deg, #1565c0, #42a5f5)",
+        
       }}
     >
-      {/* Container to match Navbar width */}
       <Box
         sx={{
           width: "100%",
@@ -93,6 +84,22 @@ const RegistrationScreen = () => {
               boxShadow: "0 6px 18px rgba(0,0,0,0.25)",
             }}
           >
+            <Box
+              sx={{
+                width: 52,
+                height: 52,
+                borderRadius: "50%",
+                background: "linear-gradient(135deg, #1976d2, #42a5f5)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                mx: "auto",
+                mb: 1.5,
+              }}
+            >
+              <LockOutlined sx={{ fontSize: 26, color: "#fff" }} />
+            </Box>
+
             <Typography
               sx={{
                 textAlign: "center",
@@ -102,28 +109,10 @@ const RegistrationScreen = () => {
                 color: error ? "error.main" : "#0d47a1",
               }}
             >
-              {error || "Create Account"}
+              {error || "Welcome Back"}
             </Typography>
 
-            <form onSubmit={Register}>
-              <TextField
-                fullWidth
-                size="small"
-                label="First Name"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                sx={{ mb: 1.5 }}
-                required
-              />
-              <TextField
-                fullWidth
-                size="small"
-                label="Last Name"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                sx={{ mb: 1.5 }}
-                required
-              />
+            <form onSubmit={handleLogin}>
               <TextField
                 fullWidth
                 size="small"
@@ -138,27 +127,23 @@ const RegistrationScreen = () => {
                 fullWidth
                 size="small"
                 label="Password"
-                type="password"
+                type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                sx={{ mb: 1.5 }}
-                required
-              />
-              <TextField
-                fullWidth
-                size="small"
-                label="Phone Number"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-                sx={{ mb: 1.5 }}
-              />
-              <TextField
-                fullWidth
-                size="small"
-                label="Address"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
                 sx={{ mb: 2 }}
+                required
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        size="small"
+                        onClick={() => setShowPassword(!showPassword)}
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
               />
 
               <Button
@@ -182,7 +167,7 @@ const RegistrationScreen = () => {
                 {loading ? (
                   <CircularProgress size={22} color="inherit" />
                 ) : (
-                  "Register"
+                  "Login"
                 )}
               </Button>
             </form>
@@ -191,16 +176,16 @@ const RegistrationScreen = () => {
               variant="body2"
               sx={{ mt: 2, textAlign: "center", fontSize: "0.85rem" }}
             >
-              Already have an account?{" "}
+              Don’t have an account?{" "}
               <Link
-                to="/Login"
+                to="/Hero"
                 style={{
                   color: "#1976d2",
                   fontWeight: 600,
                   textDecoration: "none",
                 }}
               >
-                Login
+                Sign up
               </Link>
             </Typography>
           </Paper>
@@ -212,4 +197,4 @@ const RegistrationScreen = () => {
   );
 };
 
-export default RegistrationScreen;
+export default Log;

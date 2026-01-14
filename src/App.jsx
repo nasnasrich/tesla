@@ -17,12 +17,13 @@ import Checkout from "./Pages/Checkout.jsx";
 import WomenCategory from "./Pages/WomenCategory.jsx";
 import Offer from "./Component/Offer.jsx";
 import TrackingPage from "./Component/TrackingPage.jsx";
+import Log from "./Pages/Log.jsx";
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Log/>} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/Card" element={<Card />} />
         <Route path="/Checkout" element={<Checkout />} />

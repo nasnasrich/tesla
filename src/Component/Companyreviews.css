@@ -6,7 +6,7 @@ padding: 0;
 .companyreviews{
   margin-top: 0%;
   padding-top: 0%;
-  height: 160vh;
+  height: 150vh;
   box-shadow: 4px 4px 5px rgb(30, 30, 31);
 }
 
@@ -232,7 +232,7 @@ width: 25%;
 @media (max-width: 622px) {
 
   .companyreviews{
-    height: 245vh;
+    height: 240vh;
   }
 
   .companyre h1{

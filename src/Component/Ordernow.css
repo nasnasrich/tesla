@@ -132,6 +132,7 @@ padding-top: 18px;
     /* background-image: url("../assets/tooblack.jpg"); */
     background-repeat: no-repeat;
     height: 80vh;
+    margin-bottom: 7vh;
     background-size:30%;
     width: 290%;
     box-shadow: 4px 4px 5px rgb(0, 0, 0);
@@ -386,6 +387,7 @@ padding-top: 18px;
   .mitwo h3{
     font-size: 15px;
     margin-top: 0%;
+    padding-top: 0%;
   }
 
 
@@ -402,6 +404,16 @@ padding-top: 18px;
     margin-top: 2%;
    } */
 
+
+     .electric{
+    background-repeat: no-repeat;
+    height: 80vh;
+    margin-bottom: 0vh;
+    background-size:30%;
+    box-shadow: 4px 4px 5px rgb(0, 0, 0);
+   } 
+
+
    .electric h2{
     margin-top: 0%;
     padding-top: 0%;
@@ -415,14 +427,7 @@ padding-top: 18px;
    }
    
    
-   .electric{
-    background-repeat: no-repeat;
-    height: 80vh;
-    /* color: white; */
-    background-size:30%;
-    box-shadow: 4px 4px 5px rgb(0, 0, 0);
-   } 
-
+ 
 
    .down{
     width: 45%;
