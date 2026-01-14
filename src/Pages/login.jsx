@@ -28,17 +28,24 @@ const Login = () => {
     setError("");
 
     try {
+      // ✅ Trim inputs to avoid hidden spaces from mobile keyboards
       const res = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/api/auth/login`,
-        { email, password }
+        {
+          email: email.trim(),
+          password: password.trim(),
+        },
+        {
+          timeout: 60000, // ✅ handle slower mobile connections
+        }
       );
 
-      // OPTIONAL: if backend sends token/user
+      // OPTIONAL: store token if your backend sends it
       // localStorage.setItem("token", res.data.token);
 
       navigate("/Hero");
     } catch (err) {
-      // ✅ ALWAYS convert error to STRING
+      // ✅ Safely handle all backend error formats
       const message =
         err?.response?.data?.message ||
         err?.response?.data?.error ||
@@ -141,12 +148,20 @@ const Login = () => {
               type="submit"
               variant="contained"
               disabled={loading}
+              sx={{
+                py: 1.2,
+                fontWeight: "bold",
+                borderRadius: "10px",
+                textTransform: "none",
+                fontSize: "0.95rem",
+                background: "linear-gradient(135deg, #1976d2, #0d47a1)",
+                boxShadow: "0 4px 18px rgba(13,71,161,0.4)",
+                "&:hover": {
+                  background: "linear-gradient(135deg, #1565c0, #0d47a1)",
+                },
+              }}
             >
-              {loading ? (
-                <CircularProgress size={22} color="inherit" />
-              ) : (
-                "Login"
-              )}
+              {loading ? <CircularProgress size={22} color="inherit" /> : "Login"}
             </Button>
           </form>
 
