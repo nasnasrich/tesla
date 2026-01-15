@@ -54,7 +54,7 @@ const Log = () => {
     <Box
        sx={{
         minHeight: "98dvh",
-        marginTop: "3px",
+        marginTop: "0px",
         boxShadow: "5px 5px 5px rgb(30, 30, 31)",
         width: "100%",
         display: "flex",
