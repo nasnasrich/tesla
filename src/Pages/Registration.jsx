@@ -104,7 +104,7 @@ const Registration = () => {
 
             <Typography textAlign="center" mt={2}>
               Already have an account?{" "}
-              <Link to="/login">Login</Link> {/* ✅ FIXED */}
+              <Link to="/Login">Login</Link> {/* ✅ FIXED */}
             </Typography>
           </Paper>
         </motion.div>
