@@ -43,7 +43,7 @@ const Log = () => {
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("user", JSON.stringify(response.data.user));
 
-      navigate("/");
+      navigate("/Hero");
     } catch (err) {
       setError(
         err?.response?.data?.message ||
@@ -194,7 +194,7 @@ const Log = () => {
             >
               Don’t have an account?{" "}
               <a
-                href="/Registration"
+                href="/Registre"
                 style={{
                   color: "#1976d2",
                   fontWeight: 600,

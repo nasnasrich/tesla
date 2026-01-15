@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-const Registration = () => {
+const Registre = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
     firstName: "",
@@ -38,7 +38,7 @@ const Registration = () => {
         "https://fullstack-student-backend.onrender.com/api/auth/register",
         form
       );
-      navigate("/login"); // ✅ send to Login page
+      navigate("/log"); // ✅ send to Log page
     } catch (err) {
       setError(
         err?.response?.data?.message ||
@@ -101,7 +101,7 @@ const Registration = () => {
             </form>
 
             <Typography textAlign="center" mt={2}>
-              Already have an account? <Link to="/login">Login</Link>
+              Already have an account? <Link to="/log">Login</Link>
             </Typography>
           </Paper>
         </motion.div>
@@ -110,4 +110,4 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+export default Registre;
