@@ -1,5 +1,5 @@
+import Nav from "../Component/Nav";
 import React, { useState } from "react";
-import Navs from "../Component/Navs"
 import {
   Box,
   TextField,
@@ -13,28 +13,43 @@ import {
 import { Visibility, VisibilityOff, LockOutlined } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Log = () => {
   const navigate = useNavigate();
+
+  const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
+  const handleLogin = async () => {
+    if (!email || !password) {
+      setError("Email and password are required");
+      return;
+    }
+
     setLoading(true);
     setError("");
+
     try {
-      await axios.post(`${import.meta.env.VITE_BASE_URL}/api/auth/login`, {
-        email,
-        password,
-      });
-      navigate("/Hero");
+      const response = await axios.post(
+        "https://fullstack-student-backend.onrender.com/api/auth/login",
+        { email, password }
+      );
+
+      // ✅ STORE AUTH
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("user", JSON.stringify(response.data.user));
+
+      navigate("/");
     } catch (err) {
-      setError(err?.response?.data?.error || "Login failed");
+      setError(
+        err?.response?.data?.message ||
+        err?.response?.data?.error ||
+        "Login failed"
+      );
     } finally {
       setLoading(false);
     }
@@ -42,143 +57,144 @@ const Login = () => {
 
   return (
     <>
-    <Navs/>
-    <Box
-      sx={{
-        minHeight: "98dvh",
-        marginTop: "3px",
-        boxShadow: "5px 5px 5px rgb(30, 30, 31)",
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        background: "linear-gradient(135deg, #1565c0, #42a5f5)",
-        
-      }}
-    >
+      <Nav/>
       <Box
         sx={{
+          minHeight: "98dvh",
+          marginTop: "3px",
+          boxShadow: "5px 5px 5px rgb(30, 30, 31)",
           width: "100%",
-          maxWidth: "1536px", // same as Navbar maxWidth="xl"
-          mx: "auto",
-          px: 2,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          background: "linear-gradient(135deg, #1565c0, #42a5f5)",
         }}
       >
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 15 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          style={{ width: "100%", display: "flex", justifyContent: "center" }}
+          initial={{ opacity: 0, y: 30, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+          }}
         >
           <Paper
-            elevation={8}
+            elevation={10}
             sx={{
-              width: "100%",
-              maxWidth: 320,
-              p: { xs: 2, sm: 2.5 },
-              borderRadius: "16px",
-              background: "rgba(255,255,255,0.97)",
-              boxShadow: "0 6px 18px rgba(0,0,0,0.25)",
+              p: { xs: 4, sm: 5 },
+              width: { xs: "90%", sm: 400 },
+              borderRadius: "20px",
+              textAlign: "center",
+              background: "rgba(255, 255, 255, 0.95)",
+              backdropFilter: "blur(10px)",
+              boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
             }}
           >
+            {/* Lock Icon */}
             <Box
               sx={{
-                width: 52,
-                height: 52,
+                width: 80,
+                height: 80,
                 borderRadius: "50%",
                 background: "linear-gradient(135deg, #1976d2, #42a5f5)",
                 display: "flex",
-                alignItems: "center",
                 justifyContent: "center",
+                alignItems: "center",
                 mx: "auto",
-                mb: 1.5,
+                mb: 2,
+                boxShadow: "0 4px 20px rgba(25, 118, 210, 0.5)",
               }}
             >
-              <LockOutlined sx={{ fontSize: 26, color: "#fff" }} />
+              <LockOutlined sx={{ fontSize: 40, color: "#fff" }} />
             </Box>
 
+            {/* Title */}
             <Typography
-              sx={{
-                textAlign: "center",
-                mb: 2,
-                fontWeight: "bold",
-                fontSize: "1.25rem",
-                color: error ? "error.main" : "#0d47a1",
-              }}
+              variant="h5"
+              fontWeight="bold"
+              sx={{ mb: 3, color: error ? "error.main" : "#0d47a1" }}
             >
               {error || "Welcome Back"}
             </Typography>
 
-            <form onSubmit={handleLogin}>
-              <TextField
-                fullWidth
-                size="small"
-                label="Email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                sx={{ mb: 1.5 }}
-                required
-              />
-              <TextField
-                fullWidth
-                size="small"
-                label="Password"
-                type={showPassword ? "text" : "password"}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                sx={{ mb: 2 }}
-                required
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton
-                        size="small"
-                        onClick={() => setShowPassword(!showPassword)}
-                      >
-                        {showPassword ? <VisibilityOff /> : <Visibility />}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
-              />
+            {/* Email */}
+            <TextField
+              fullWidth
+              label="Email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              sx={{
+                mb: 3,
+                "& .MuiOutlinedInput-root": { borderRadius: "12px" },
+              }}
+            />
 
-              <Button
-                fullWidth
-                type="submit"
-                variant="contained"
-                disabled={loading}
-                sx={{
-                  py: 1.2,
-                  fontWeight: "bold",
-                  borderRadius: "10px",
-                  textTransform: "none",
-                  fontSize: "0.95rem",
-                  background: "linear-gradient(135deg, #1976d2, #0d47a1)",
-                  boxShadow: "0 4px 18px rgba(13,71,161,0.4)",
-                  "&:hover": {
-                    background: "linear-gradient(135deg, #1565c0, #0d47a1)",
-                  },
-                }}
-              >
-                {loading ? (
-                  <CircularProgress size={22} color="inherit" />
-                ) : (
-                  "Login"
-                )}
-              </Button>
-            </form>
+            {/* Password */}
+            <TextField
+              fullWidth
+              label="Password"
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              sx={{
+                mb: 3,
+                "& .MuiOutlinedInput-root": { borderRadius: "12px" },
+              }}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+            />
 
+            {/* Button */}
+            <Button
+              fullWidth
+              variant="contained"
+              size="large"
+              onClick={handleLogin}
+              disabled={loading}
+              sx={{
+                py: 1.4,
+                fontWeight: "bold",
+                borderRadius: "12px",
+                textTransform: "none",
+                fontSize: "1rem",
+                background: "linear-gradient(135deg, #1976d2, #0d47a1)",
+                boxShadow: "0 6px 25px rgba(13, 71, 161, 0.4)",
+                "&:hover": {
+                  background: "linear-gradient(135deg, #1565c0, #0d47a1)",
+                },
+              }}
+            >
+              {loading ? (
+                <CircularProgress size={24} color="inherit" />
+              ) : (
+                "Login"
+              )}
+            </Button>
+
+            {/* Footer */}
             <Typography
               variant="body2"
-              sx={{ mt: 2, textAlign: "center", fontSize: "0.85rem" }}
+              sx={{ mt: 3, color: "text.secondary" }}
             >
               Don’t have an account?{" "}
-              <Link
-                to="/Hero"
+              <a
+                href="/register"
                 style={{
                   color: "#1976d2",
                   fontWeight: 600,
@@ -186,15 +202,13 @@ const Login = () => {
                 }}
               >
                 Sign up
-              </Link>
+              </a>
             </Typography>
           </Paper>
         </motion.div>
       </Box>
-    </Box>
-        </>
-
+    </>
   );
 };
 
-export default Login;
+export default Log;
