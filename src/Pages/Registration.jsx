@@ -40,7 +40,7 @@ const Registration = () => {
         "https://fullstack-student-backend.onrender.com/api/auth/register",
         form
       );
-      navigate("/login");
+      navigate("/login"); // ✅ correct
     } catch (err) {
       setError(
         err?.response?.data?.message ||
@@ -104,7 +104,7 @@ const Registration = () => {
 
             <Typography textAlign="center" mt={2}>
               Already have an account?{" "}
-              <Link to="/Log">Login</Link>
+              <Link to="/login">Login</Link> {/* ✅ FIXED */}
             </Typography>
           </Paper>
         </motion.div>
