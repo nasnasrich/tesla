@@ -56,7 +56,7 @@ const RegistrationScreen = () => {
       sx={{
         minHeight: "100dvh",
         width: "100%",
-        marginTop: "1vh",
+        marginTop: "3px",
         boxShadow: "5px 5px 5px rgb(30, 30, 31)",
         display: "flex",
         justifyContent: "center",
