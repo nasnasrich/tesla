@@ -357,6 +357,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     width:86%;
     height: 5vh;
     color: rgb(123, 125, 128);
+    background-color: white;
     box-shadow: 4px 4px 5px rgb(30, 30, 31);
     /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
     font-size: 17px;

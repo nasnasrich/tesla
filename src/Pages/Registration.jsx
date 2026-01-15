@@ -1,12 +1,6 @@
-import Navs from "../Component/Navs";
-import {
-  Box,
-  TextField,
-  Button,
-  Typography,
-  Paper,
-  CircularProgress,
-} from "@mui/material";
+// src/Pages/Registration.jsx
+import Nav from "../Component/Nav";
+import { Box, TextField, Button, Typography, Paper, CircularProgress } from "@mui/material";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -25,10 +19,9 @@ const Registration = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const handleChange = (e) =>
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleRegister = async (e) => {
+  const Register = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
@@ -38,13 +31,9 @@ const Registration = () => {
         "https://fullstack-student-backend.onrender.com/api/auth/register",
         form
       );
-      navigate("/login"); // ✅ send to Login page
+      navigate("/log");
     } catch (err) {
-      setError(
-        err?.response?.data?.message ||
-        err?.response?.data?.error ||
-        "Registration failed"
-      );
+      setError(err?.response?.data?.message || err?.response?.data?.error || "Registration failed");
     } finally {
       setLoading(false);
     }
@@ -52,31 +41,13 @@ const Registration = () => {
 
   return (
     <>
-      <Navs />
-      <Box
-        sx={{
-          minHeight: "100dvh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          background: "linear-gradient(135deg, #1565c0, #42a5f5)",
-        }}
-      >
+      <Nav/>
+      <Box sx={{ minHeight: "100dvh", display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(135deg, #1565c0, #42a5f5)" }}>
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <Paper sx={{ p: 3, width: 350, borderRadius: 3 }}>
-            <Typography textAlign="center" mb={2} fontWeight="bold">
-              {error || "Create Account"}
-            </Typography>
-
-            <form onSubmit={handleRegister}>
-              {[
-                "firstName",
-                "lastName",
-                "email",
-                "password",
-                "phoneNumber",
-                "address",
-              ].map((field) => (
+            <Typography textAlign="center" mb={2} fontWeight="bold">{error || "Create Account"}</Typography>
+            <form onSubmit={Register}>
+              {["firstName","lastName","email","password","phoneNumber","address"].map((field) => (
                 <TextField
                   key={field}
                   name={field}
@@ -89,19 +60,12 @@ const Registration = () => {
                   required={field !== "phoneNumber" && field !== "address"}
                 />
               ))}
-
-              <Button
-                fullWidth
-                type="submit"
-                variant="contained"
-                disabled={loading}
-              >
+              <Button fullWidth type="submit" variant="contained" disabled={loading}>
                 {loading ? <CircularProgress size={22} /> : "Register"}
               </Button>
             </form>
-
             <Typography textAlign="center" mt={2}>
-              Already have an account? <Link to="/login">Login</Link>
+              Already have an account? <Link to="/log" style={{ color: "#1976d2", fontWeight: 600 }}>Login</Link>
             </Typography>
           </Paper>
         </motion.div>

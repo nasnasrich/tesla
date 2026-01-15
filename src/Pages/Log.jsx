@@ -1,5 +1,5 @@
+// src/Pages/Log.jsx
 import Navs from "../Component/Navs";
-import React, { useState } from "react";
 import {
   Box,
   TextField,
@@ -13,11 +13,11 @@ import {
 import { Visibility, VisibilityOff, LockOutlined } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 
 const Log = () => {
   const navigate = useNavigate();
-
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,7 +29,6 @@ const Log = () => {
       setError("Email and password are required");
       return;
     }
-
     setLoading(true);
     setError("");
 
@@ -38,18 +37,12 @@ const Log = () => {
         "https://fullstack-student-backend.onrender.com/api/auth/login",
         { email, password }
       );
-
-      // ✅ STORE AUTH
+      // Save token & user
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("user", JSON.stringify(response.data.user));
-
-      navigate("/Hero");
+      navigate("/"); // Redirect after login
     } catch (err) {
-      setError(
-        err?.response?.data?.message ||
-        err?.response?.data?.error ||
-        "Login failed"
-      );
+      setError(err?.response?.data?.message || err?.response?.data?.error || "Login failed");
     } finally {
       setLoading(false);
     }
@@ -61,9 +54,6 @@ const Log = () => {
       <Box
         sx={{
           minHeight: "98dvh",
-          marginTop: "3px",
-          boxShadow: "5px 5px 5px rgb(30, 30, 31)",
-          width: "100%",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -74,12 +64,6 @@ const Log = () => {
           initial={{ opacity: 0, y: 30, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "100%",
-          }}
         >
           <Paper
             elevation={10}
@@ -90,7 +74,7 @@ const Log = () => {
               textAlign: "center",
               background: "rgba(255, 255, 255, 0.95)",
               backdropFilter: "blur(10px)",
-              boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -108,7 +92,7 @@ const Log = () => {
                 alignItems: "center",
                 mx: "auto",
                 mb: 2,
-                boxShadow: "0 4px 20px rgba(25, 118, 210, 0.5)",
+                boxShadow: "0 4px 20px rgba(25,118,210,0.5)",
               }}
             >
               <LockOutlined sx={{ fontSize: 40, color: "#fff" }} />
@@ -123,36 +107,26 @@ const Log = () => {
               {error || "Welcome Back"}
             </Typography>
 
-            {/* Email */}
             <TextField
               fullWidth
               label="Email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              sx={{
-                mb: 3,
-                "& .MuiOutlinedInput-root": { borderRadius: "12px" },
-              }}
+              sx={{ mb: 3, "& .MuiOutlinedInput-root": { borderRadius: "12px" } }}
             />
 
-            {/* Password */}
             <TextField
               fullWidth
               label="Password"
               type={showPassword ? "text" : "password"}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              sx={{
-                mb: 3,
-                "& .MuiOutlinedInput-root": { borderRadius: "12px" },
-              }}
+              sx={{ mb: 3, "& .MuiOutlinedInput-root": { borderRadius: "12px" } }}
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
-                    <IconButton
-                      onClick={() => setShowPassword(!showPassword)}
-                    >
+                    <IconButton onClick={() => setShowPassword(!showPassword)}>
                       {showPassword ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                   </InputAdornment>
@@ -160,7 +134,6 @@ const Log = () => {
               }}
             />
 
-            {/* Button */}
             <Button
               fullWidth
               variant="contained"
@@ -174,35 +147,18 @@ const Log = () => {
                 textTransform: "none",
                 fontSize: "1rem",
                 background: "linear-gradient(135deg, #1976d2, #0d47a1)",
-                boxShadow: "0 6px 25px rgba(13, 71, 161, 0.4)",
-                "&:hover": {
-                  background: "linear-gradient(135deg, #1565c0, #0d47a1)",
-                },
+                boxShadow: "0 6px 25px rgba(13,71,161,0.4)",
+                "&:hover": { background: "linear-gradient(135deg, #1565c0, #0d47a1)" },
               }}
             >
-              {loading ? (
-                <CircularProgress size={24} color="inherit" />
-              ) : (
-                "Login"
-              )}
+              {loading ? <CircularProgress size={24} color="inherit" /> : "Login"}
             </Button>
 
-            {/* Footer */}
-            <Typography
-              variant="body2"
-              sx={{ mt: 3, color: "text.secondary" }}
-            >
+            <Typography textAlign="center" mt={3}>
               Don’t have an account?{" "}
-              <a
-                href="/Registre"
-                style={{
-                  color: "#1976d2",
-                  fontWeight: 600,
-                  textDecoration: "none",
-                }}
-              >
-                Sign up
-              </a>
+              <Link to="/registre" style={{ color: "#1976d2", fontWeight: 600 }}>
+                Sign Up
+              </Link>
             </Typography>
           </Paper>
         </motion.div>

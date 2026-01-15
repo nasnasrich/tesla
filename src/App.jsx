@@ -29,11 +29,12 @@ function App() {
       <Route path="/log" element={<Log />} />            {/* second login page */}
 
       {/* Registration Pages */}
-      <Route path="/register" element={<Registration />} /> {/* main registration */}
+      <Route path="/registration" element={<Registration />} /> {/* main registration */}
       <Route path="/registre" element={<Registre />} />     {/* second registration */}
 
       {/* Other pages */}
       <Route path="/cart" element={<Cart />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/card" element={<Card />} />
       <Route path="/hero" element={<Hero />} />

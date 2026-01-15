@@ -232,7 +232,7 @@ width: 25%;
 @media (max-width: 622px) {
 
   .companyreviews{
-    height: 240vh;
+    height: 236vh;
   }
 
   .companyre h1{
@@ -308,6 +308,7 @@ margin-bottom: 0px;
 
 .feter{
   margin-top: 4vh;
+  font-size: 13px;
 }
 
 }
