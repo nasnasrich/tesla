@@ -194,7 +194,7 @@ const Log = () => {
             >
               Don’t have an account?{" "}
               <a
-                href="/register"
+                href="/Registration"
                 style={{
                   color: "#1976d2",
                   fontWeight: 600,
