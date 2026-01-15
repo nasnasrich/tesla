@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-const RegistrationScreen = () => {
+const Registration = () => {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -104,7 +104,7 @@ const RegistrationScreen = () => {
 
             <Typography textAlign="center" mt={2}>
               Already have an account?{" "}
-              <Link to="/login">Login</Link>
+              <Link to="/Log">Login</Link>
             </Typography>
           </Paper>
         </motion.div>
@@ -113,4 +113,4 @@ const RegistrationScreen = () => {
   );
 };
 
-export default RegistrationScreen;
+export default Registration;
