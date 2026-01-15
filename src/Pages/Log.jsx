@@ -42,7 +42,6 @@ const Log = () => {
   }
 };
 
-
   return (
     <>
     <Navs/>
