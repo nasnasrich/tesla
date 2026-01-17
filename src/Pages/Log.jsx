@@ -38,7 +38,7 @@ const Log = () => {
 
     try {
       await axios.post(
-        "https://fullstack-student-backend.onrender.com/api/auth/login",
+        "https://backend-classswork.onrender.com/api/users/login",
         { email, password }
       );
 
@@ -161,7 +161,7 @@ const Log = () => {
           <Typography variant="body2" sx={{ mt: 3 }}>
             Don’t have an account?{" "}
             <Link
-              to="/Hero" /*Registre */
+              to="/registre" /*Registre */
               style={{ color: "#1976d2", fontWeight: 600 }}
             >
               Sign up

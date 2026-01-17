@@ -16,8 +16,8 @@ const Registre = () => {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
+    
+    name: "",
     email: "",
     password: "",
     phoneNumber: "",
@@ -37,7 +37,7 @@ const Registre = () => {
 
     try {
       await axios.post(
-        "https://fullstack-student-backend.onrender.com/api/auth/register",
+        "https://backend-classswork.onrender.com/api/users/register",
         form
       );
       navigate("/login");
@@ -91,8 +91,8 @@ const Registre = () => {
 
             <form onSubmit={Register}>
               {[
-                "firstName",
-                "lastName",
+                "name",
+                
                 "email",
                 "password",
                 "phoneNumber",
