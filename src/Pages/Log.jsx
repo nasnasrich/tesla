@@ -1,3 +1,5 @@
+import Navs from "../Component/Navs";
+
 import React, { useState } from "react";
 import {
   Box,
@@ -49,6 +51,8 @@ const Log = () => {
   };
 
   return (
+    <>
+      <Navs />
     <Box
       sx={{
         minHeight: "100vh",
@@ -163,6 +167,7 @@ const Log = () => {
         </Paper>
       </motion.div>
     </Box>
+    </>
   );
 };
 

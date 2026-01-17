@@ -1,4 +1,5 @@
-import Nav from "../Component/Nav";
+import Navs from "../Component/Navs";
+import React, { useState } from "react";
 import {
   Box,
   TextField,
@@ -7,9 +8,8 @@ import {
   Paper,
   CircularProgress,
 } from "@mui/material";
-import axios from "axios";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
 const Registre = () => {
@@ -54,30 +54,35 @@ const Registre = () => {
 
   return (
     <>
-      <Nav />
+      <Navs />
       <Box
         sx={{
-          minHeight: "100dvh",
+          minHeight: "100vh",
           display: "flex",
-          justifyContent: "center",
           alignItems: "center",
+          justifyContent: "center",
           background: "linear-gradient(135deg, #1565c0, #42a5f5)",
           p: 2,
         }}
       >
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          style={{ width: "100%", maxWidth: 400 }}
+        >
           <Paper
+            elevation={10}
             sx={{
-              p: { xs: 2, sm: 3 },          // smaller padding on phones
-              borderRadius: 3,
-              width: { xs: "95vw", sm: 400 }, // almost full width on phones
-              maxWidth: 400,
-              boxSizing: "border-box",
-              maxHeight: { xs: "90vh", sm: "auto" }, // limit vertical height on phones
-              overflowY: { xs: "auto", sm: "visible" }, // scroll if too tall on small screens
+              p: 3,
+              borderRadius: "20px",
+              textAlign: "center",
+              background: "rgba(255,255,255,0.95)",
+              maxHeight: { xs: "90vh", sm: "auto" },
+              overflowY: { xs: "auto", sm: "visible" },
             }}
           >
-            <Typography textAlign="center" mb={2} fontWeight="bold">
+            <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
               {error || "Create Account"}
             </Typography>
 
@@ -104,17 +109,30 @@ const Registre = () => {
               ))}
 
               <Button
-                fullWidth
                 type="submit"
+                fullWidth
                 variant="contained"
                 disabled={loading}
+                sx={{
+                  py: 1.4,
+                  fontWeight: "bold",
+                  borderRadius: "12px",
+                  textTransform: "none",
+                }}
               >
-                {loading ? <CircularProgress size={22} /> : "Register"}
+                {loading ? (
+                  <CircularProgress size={24} color="inherit" />
+                ) : (
+                  "Register"
+                )}
               </Button>
             </form>
 
-            <Typography textAlign="center" mt={2}>
-              Already have an account? <Link to="/login">Login</Link>
+            <Typography variant="body2" sx={{ mt: 3 }}>
+              Already have an account?{" "}
+              <Link to="/login" style={{ color: "#1976d2", fontWeight: 600 }}>
+                Login
+              </Link>
             </Typography>
           </Paper>
         </motion.div>
