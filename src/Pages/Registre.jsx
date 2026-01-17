@@ -16,12 +16,13 @@ const Registre = () => {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    
     name: "",
     email: "",
     password: "",
     phoneNumber: "",
     address: "",
+    country: "",
+    state: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -36,10 +37,11 @@ const Registre = () => {
     setError("");
 
     try {
-      await axios.post(
+      const res = await axios.post(
         "https://backend-classswork.onrender.com/api/users/register",
         form
       );
+      console.log(res.data); // check response
       navigate("/login");
     } catch (err) {
       setError(
@@ -54,7 +56,7 @@ const Registre = () => {
 
   return (
     <>
-      <Navs/>
+      <Navs />
       <Box
         sx={{
           minHeight: "85vh",
@@ -92,11 +94,12 @@ const Registre = () => {
             <form onSubmit={Register}>
               {[
                 "name",
-                
                 "email",
                 "password",
                 "phoneNumber",
                 "address",
+                "country",
+                "state",
               ].map((field) => (
                 <TextField
                   key={field}
@@ -107,7 +110,7 @@ const Registre = () => {
                   size="small"
                   onChange={handleChange}
                   sx={{ mb: 1.5 }}
-                  required={field !== "phoneNumber" && field !== "address"}
+                  required={["name", "email", "password"].includes(field)}
                 />
               ))}
 
@@ -123,11 +126,7 @@ const Registre = () => {
                   textTransform: "none",
                 }}
               >
-                {loading ? (
-                  <CircularProgress size={24} color="inherit" />
-                ) : (
-                  "Register"
-                )}
+                {loading ? <CircularProgress size={24} color="inherit" /> : "Register"}
               </Button>
             </form>
 
