@@ -66,8 +66,7 @@ function ResponsiveAppBar() {
           <Typography
             variant="h6"
             noWrap
-            component={Link}
-            to="/Login"
+
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -130,7 +129,7 @@ function ResponsiveAppBar() {
           </Box>
 
           {/* Mobile Logo */}
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, }} />
+          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, }} />
           <Typography
             variant="h5"
             noWrap
@@ -141,6 +140,8 @@ function ResponsiveAppBar() {
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
               fontFamily: 'monospace',
+              margin: "0px",
+              padding: "0px",
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
@@ -148,7 +149,7 @@ function ResponsiveAppBar() {
             }}
           >
             TESLA
-          </Typography> 
+          </Typography>  */}
 
           {/* DESKTOP LINKS */}
           {/* <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>

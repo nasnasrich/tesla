@@ -52,10 +52,13 @@ const Log = () => {
 
   return (
     <>
-      <Navs />
+      <Navs/>
     <Box
       sx={{
-        minHeight: "100vh",
+        minHeight: "85vh",
+        marginLeft: "1px",
+        marginTop: "1vh",
+        boxShadow: "4px 4px 5px rgb(0, 0, 0)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -158,7 +161,7 @@ const Log = () => {
           <Typography variant="body2" sx={{ mt: 3 }}>
             Don’t have an account?{" "}
             <Link
-              to="/Hero"
+              to="/Hero" /*Registre */
               style={{ color: "#1976d2", fontWeight: 600 }}
             >
               Sign up

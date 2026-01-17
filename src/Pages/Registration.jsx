@@ -1,13 +1,21 @@
 // src/Pages/Registration.jsx
-import Nav from "../Component/Nav";
-import { Box, TextField, Button, Typography, Paper, CircularProgress } from "@mui/material";
-import axios from "axios";
+  import Nav from "../Component/Nav";
+import React, { useState } from "react";
+import {
+  Box,
+  TextField,
+  Button,
+  Typography,
+  Paper,
+  CircularProgress,
+} from "@mui/material";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
 const Registration = () => {
   const navigate = useNavigate();
+
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -16,10 +24,12 @@ const Registration = () => {
     phoneNumber: "",
     address: "",
   });
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
 
   const Register = async (e) => {
     e.preventDefault();
@@ -31,9 +41,13 @@ const Registration = () => {
         "https://fullstack-student-backend.onrender.com/api/auth/register",
         form
       );
-      navigate("/log");
+      navigate("/login");
     } catch (err) {
-      setError(err?.response?.data?.message || err?.response?.data?.error || "Registration failed");
+      setError(
+        err?.response?.data?.message ||
+          err?.response?.data?.error ||
+          "Registration failed"
+      );
     } finally {
       setLoading(false);
     }
@@ -42,12 +56,49 @@ const Registration = () => {
   return (
     <>
       <Nav/>
-      <Box sx={{ minHeight: "100dvh", display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(135deg, #1565c0, #42a5f5)" }}>
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-          <Paper sx={{ p: 3, width: 350, borderRadius: 3 }}>
-            <Typography textAlign="center" mb={2} fontWeight="bold">{error || "Create Account"}</Typography>
+      <Box
+        sx={{
+          minHeight: "85vh",
+          marginLeft: "1px",
+          marginTop: "1vh",
+          boxShadow: "4px 4px 5px rgb(0, 0, 0)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "linear-gradient(135deg, #1565c0, #42a5f5)",
+          p: 2,
+        }}
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          style={{ width: "100%", maxWidth: 400 }}
+        >
+          <Paper
+            elevation={10}
+            sx={{
+              p: 3,
+              borderRadius: "20px",
+              textAlign: "center",
+              background: "rgba(255,255,255,0.95)",
+              maxHeight: { xs: "90vh", sm: "auto" },
+              overflowY: { xs: "auto", sm: "visible" },
+            }}
+          >
+            <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
+              {error || "Create Account"}
+            </Typography>
+
             <form onSubmit={Register}>
-              {["firstName","lastName","email","password","phoneNumber","address"].map((field) => (
+              {[
+                "firstName",
+                "lastName",
+                "email",
+                "password",
+                "phoneNumber",
+                "address",
+              ].map((field) => (
                 <TextField
                   key={field}
                   name={field}
@@ -60,12 +111,32 @@ const Registration = () => {
                   required={field !== "phoneNumber" && field !== "address"}
                 />
               ))}
-              <Button fullWidth type="submit" variant="contained" disabled={loading}>
-                {loading ? <CircularProgress size={22} /> : "Register"}
+
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                disabled={loading}
+                sx={{
+                  py: 1.4,
+                  fontWeight: "bold",
+                  borderRadius: "12px",
+                  textTransform: "none",
+                }}
+              >
+                {loading ? (
+                  <CircularProgress size={24} color="inherit" />
+                ) : (
+                  "Register"
+                )}
               </Button>
             </form>
-            <Typography textAlign="center" mt={2}>
-              Already have an account? <Link to="/log" style={{ color: "#1976d2", fontWeight: 600 }}>Login</Link>
+
+            <Typography variant="body2" sx={{ mt: 3 }}>
+              Already have an account?{" "}
+              <Link to="/login" style={{ color: "#1976d2", fontWeight: 600 }}>
+                Login
+              </Link>
             </Typography>
           </Paper>
         </motion.div>

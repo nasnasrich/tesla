@@ -54,10 +54,13 @@ const Registre = () => {
 
   return (
     <>
-      <Navs />
+      <Navs/>
       <Box
         sx={{
-          minHeight: "100vh",
+          minHeight: "85vh",
+          marginLeft: "1px",
+          marginTop: "1vh",
+          boxShadow: "4px 4px 5px rgb(0, 0, 0)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -130,7 +133,7 @@ const Registre = () => {
 
             <Typography variant="body2" sx={{ mt: 3 }}>
               Already have an account?{" "}
-              <Link to="/login" style={{ color: "#1976d2", fontWeight: 600 }}>
+              <Link to="/log" style={{ color: "#1976d2", fontWeight: 600 }}>
                 Login
               </Link>
             </Typography>
