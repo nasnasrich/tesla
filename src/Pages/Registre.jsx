@@ -1,4 +1,4 @@
-import Navs from "../Component/Navs";
+import Nav from "../Component/Nav";
 import {
   Box,
   TextField,
@@ -7,12 +7,12 @@ import {
   Paper,
   CircularProgress,
 } from "@mui/material";
-import { motion } from "framer-motion";
 import axios from "axios";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-const Register = () => {
+const Registre = () => {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -20,6 +20,8 @@ const Register = () => {
     lastName: "",
     email: "",
     password: "",
+    phoneNumber: "",
+    address: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -28,32 +30,22 @@ const Register = () => {
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleRegister = async (e) => {
+  const Register = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
     try {
-      // ✅ BACKEND-SAFE PAYLOAD
-      const payload = {
-        name: `${form.firstName} ${form.lastName}`,
-        email: form.email,
-        password: form.password,
-      };
-
       await axios.post(
         "https://fullstack-student-backend.onrender.com/api/auth/register",
-        payload,
-        { headers: { "Content-Type": "application/json" } }
+        form
       );
-
-      navigate("/log");
+      navigate("/login");
     } catch (err) {
-      console.error("REGISTER ERROR:", err.response?.data);
       setError(
         err?.response?.data?.message ||
-        err?.response?.data?.error ||
-        "Registration failed"
+          err?.response?.data?.error ||
+          "Registration failed"
       );
     } finally {
       setLoading(false);
@@ -62,7 +54,7 @@ const Register = () => {
 
   return (
     <>
-      <Navs />
+      <Nav />
       <Box
         sx={{
           minHeight: "100dvh",
@@ -70,56 +62,50 @@ const Register = () => {
           justifyContent: "center",
           alignItems: "center",
           background: "linear-gradient(135deg, #1565c0, #42a5f5)",
+          p: 2,
         }}
       >
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-          <Paper sx={{ p: 4, width: 360, borderRadius: 3 }}>
-            <Typography textAlign="center" mb={2} fontWeight="bold" color="error">
+          <Paper
+            sx={{
+              p: { xs: 2, sm: 3 },          // smaller padding on phones
+              borderRadius: 3,
+              width: { xs: "95vw", sm: 400 }, // almost full width on phones
+              maxWidth: 400,
+              boxSizing: "border-box",
+              maxHeight: { xs: "90vh", sm: "auto" }, // limit vertical height on phones
+              overflowY: { xs: "auto", sm: "visible" }, // scroll if too tall on small screens
+            }}
+          >
+            <Typography textAlign="center" mb={2} fontWeight="bold">
               {error || "Create Account"}
             </Typography>
 
-            <form onSubmit={handleRegister}>
-              <TextField
-                name="firstName"
-                label="First Name"
-                fullWidth
-                required
-                onChange={handleChange}
-                sx={{ mb: 1.5 }}
-              />
-
-              <TextField
-                name="lastName"
-                label="Last Name"
-                fullWidth
-                required
-                onChange={handleChange}
-                sx={{ mb: 1.5 }}
-              />
-
-              <TextField
-                name="email"
-                label="Email"
-                type="email"
-                fullWidth
-                required
-                onChange={handleChange}
-                sx={{ mb: 1.5 }}
-              />
-
-              <TextField
-                name="password"
-                label="Password"
-                type="password"
-                fullWidth
-                required
-                onChange={handleChange}
-                sx={{ mb: 2 }}
-              />
+            <form onSubmit={Register}>
+              {[
+                "firstName",
+                "lastName",
+                "email",
+                "password",
+                "phoneNumber",
+                "address",
+              ].map((field) => (
+                <TextField
+                  key={field}
+                  name={field}
+                  label={field.replace(/([A-Z])/g, " $1")}
+                  type={field === "password" ? "password" : "text"}
+                  fullWidth
+                  size="small"
+                  onChange={handleChange}
+                  sx={{ mb: 1.5 }}
+                  required={field !== "phoneNumber" && field !== "address"}
+                />
+              ))}
 
               <Button
-                type="submit"
                 fullWidth
+                type="submit"
                 variant="contained"
                 disabled={loading}
               >
@@ -128,7 +114,7 @@ const Register = () => {
             </form>
 
             <Typography textAlign="center" mt={2}>
-              Already have an account? <Link to="/log">Login</Link>
+              Already have an account? <Link to="/login">Login</Link>
             </Typography>
           </Paper>
         </motion.div>
@@ -137,4 +123,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Registre;
