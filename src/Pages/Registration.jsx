@@ -1,5 +1,4 @@
-// src/Pages/Registration.jsx
-  import Nav from "../Component/Nav";
+import Nav from "../Component/Navs";
 import React, { useState } from "react";
 import {
   Box,
@@ -17,12 +16,13 @@ const Registration = () => {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
     password: "",
     phoneNumber: "",
     address: "",
+    country: "",
+    state: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -37,10 +37,11 @@ const Registration = () => {
     setError("");
 
     try {
-      await axios.post(
-        "https://fullstack-student-backend.onrender.com/api/auth/register",
+      const res = await axios.post(
+        "https://backend-classswork.onrender.com/api/users/register",
         form
       );
+      console.log(res.data); // check response
       navigate("/login");
     } catch (err) {
       setError(
@@ -92,12 +93,13 @@ const Registration = () => {
 
             <form onSubmit={Register}>
               {[
-                "firstName",
-                "lastName",
+                "name",
                 "email",
                 "password",
                 "phoneNumber",
                 "address",
+                "country",
+                "state",
               ].map((field) => (
                 <TextField
                   key={field}
@@ -108,7 +110,7 @@ const Registration = () => {
                   size="small"
                   onChange={handleChange}
                   sx={{ mb: 1.5 }}
-                  required={field !== "phoneNumber" && field !== "address"}
+                  required={["name", "email", "password"].includes(field)}
                 />
               ))}
 
@@ -124,17 +126,13 @@ const Registration = () => {
                   textTransform: "none",
                 }}
               >
-                {loading ? (
-                  <CircularProgress size={24} color="inherit" />
-                ) : (
-                  "Register"
-                )}
+                {loading ? <CircularProgress size={24} color="inherit" /> : "Register"}
               </Button>
             </form>
 
             <Typography variant="body2" sx={{ mt: 3 }}>
               Already have an account?{" "}
-              <Link to="/login" style={{ color: "#1976d2", fontWeight: 600 }}>
+              <Link to="/log" style={{ color: "#1976d2", fontWeight: 600 }}>
                 Login
               </Link>
             </Typography>
