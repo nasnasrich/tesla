@@ -38,11 +38,11 @@ const Log = () => {
 
     try {
       await axios.post(
-        "https://backend-classswork.onrender.com/api/users/login",
-        { email, password }
-      );
+         `${import.meta.env.VITE_BASE_URL}/api/users/login`,
+             {email, password }
+        );
 
-      navigate("/");
+      navigate("/Hero");
     } catch (err) {
       setError(err?.response?.data?.error || "Login failed");
     } finally {

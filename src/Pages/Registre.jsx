@@ -37,10 +37,11 @@ const Registre = () => {
     setError("");
 
     try {
-      const res = await axios.post(
-        "https://backend-classswork.onrender.com/api/users/register",
-        form
-      );
+     const res = await axios.post(
+       `${import.meta.env.VITE_API_URL}/api/users/register`,
+         form
+        );
+
       console.log(res.data); // check response
       navigate("/login");
     } catch (err) {

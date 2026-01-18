@@ -37,10 +37,10 @@ const Login = () => {
     setError("");
 
     try {
-      await axios.post(
-        "https://backend-classswork.onrender.com/api/users/login",
-        { email, password }
-      );
+       await axios.post(
+         `${import.meta.env.VITE_BASE_URL}/api/users/login`,
+             {email, password }
+        );
 
       navigate("/");
     } catch (err) {
@@ -161,7 +161,7 @@ const Login = () => {
           <Typography variant="body2" sx={{ mt: 3 }}>
             Don’t have an account?{" "}
             <Link
-              to="/registre" /*Registre */
+              to="/registration" /*Registration*/
               style={{ color: "#1976d2", fontWeight: 600 }}
             >
               Sign up
