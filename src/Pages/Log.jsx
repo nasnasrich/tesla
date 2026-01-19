@@ -51,7 +51,7 @@ const Log = () => {
       // localStorage.setItem("token", res.data.token);
       // localStorage.setItem("user", JSON.stringify(res.data.user));
 
-      navigate("/hero");
+      navigate("/registre");
     } catch (err) {
       console.error(err);
       setError(
