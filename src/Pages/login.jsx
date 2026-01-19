@@ -1,5 +1,4 @@
 import Nav from "../Component/Nav";
-
 import React, { useState } from "react";
 import {
   Box,
@@ -37,14 +36,29 @@ const Login = () => {
     setError("");
 
     try {
-       await axios.post(
-         `${import.meta.env.VITE_BASE_URL}/api/users/login`,
-             {email, password }
-        );
+      // Debug logs (optional)
+      console.log("Logging in with:", { email, password });
+      console.log("POST URL:", `${import.meta.env.VITE_BASE_URL}/api/users/login`);
 
-      navigate("/");
+      const res = await axios.post(
+        `${import.meta.env.VITE_BASE_URL}/api/users/login`,
+        { email, password }
+      );
+
+      console.log("Login response:", res.data);
+
+      // Optional: store token if backend sends one
+      // localStorage.setItem("token", res.data.token);
+      // localStorage.setItem("user", JSON.stringify(res.data.user));
+
+      navigate("/hero");
     } catch (err) {
-      setError(err?.response?.data?.error || "Login failed");
+      console.error(err);
+      setError(
+        err?.response?.data?.message ||
+        err?.response?.data?.error ||
+        "Login failed"
+      );
     } finally {
       setLoading(false);
     }
@@ -52,124 +66,125 @@ const Login = () => {
 
   return (
     <>
-      <Nav/>
-    <Box
-      sx={{
-        minHeight: "85vh",
-        marginLeft: "1px",
-        marginTop: "1vh",
-        boxShadow: "4px 4px 5px rgb(0, 0, 0)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        background: "linear-gradient(135deg, #1565c0, #42a5f5)",
-        p: 2,
-      }}
-    >
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        style={{ width: "100%", maxWidth: 400 }}
+      <Nav />
+      <Box
+        sx={{
+          minHeight: "85vh",
+          marginLeft: "1px",
+          marginTop: "1vh",
+          boxShadow: "4px 4px 5px rgb(0, 0, 0)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "linear-gradient(135deg, #1565c0, #42a5f5)",
+          p: 2,
+        }}
       >
-        <Paper
-          elevation={10}
-          sx={{
-            p: 4,
-            borderRadius: "20px",
-            textAlign: "center",
-            background: "rgba(255,255,255,0.95)",
-          }}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          style={{ width: "100%", maxWidth: 400 }}
         >
-          {/* Icon */}
-          <Box
+          <Paper
+            elevation={10}
             sx={{
-              width: 80,
-              height: 80,
-              borderRadius: "50%",
-              background: "linear-gradient(135deg, #1976d2, #42a5f5)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              mx: "auto",
-              mb: 2,
+              p: 4,
+              borderRadius: "20px",
+              textAlign: "center",
+              background: "rgba(255,255,255,0.95)",
             }}
           >
-            <LockOutlined sx={{ fontSize: 40, color: "#fff" }} />
-          </Box>
-
-          <Typography variant="h5" fontWeight="bold" sx={{ mb: 1 }}>
-            Welcome Back
-          </Typography>
-
-          {error && (
-            <Typography color="error" sx={{ mb: 2, fontSize: 14 }}>
-              {error}
-            </Typography>
-          )}
-
-          <form onSubmit={handleLogin}>
-            <TextField
-              fullWidth
-              label="Email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              sx={{ mb: 2 }}
-            />
-
-            <TextField
-              fullWidth
-              label="Password"
-              type={showPassword ? "text" : "password"}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              sx={{ mb: 3 }}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton
-                      onClick={() => setShowPassword(!showPassword)}
-                      edge="end"
-                    >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />
-
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              disabled={loading}
+            {/* Icon */}
+            <Box
               sx={{
-                py: 1.4,
-                fontWeight: "bold",
-                borderRadius: "12px",
-                textTransform: "none",
+                width: 80,
+                height: 80,
+                borderRadius: "50%",
+                background: "linear-gradient(135deg, #1976d2, #42a5f5)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                mx: "auto",
+                mb: 2,
               }}
             >
-              {loading ? (
-                <CircularProgress size={24} color="inherit" />
-              ) : (
-                "Login"
-              )}
-            </Button>
-          </form> 
-          <Typography variant="body2" sx={{ mt: 3 }}>
-            Don’t have an account?{" "}
-            <Link
-              to="/registration" /*Registration*/
-              style={{ color: "#1976d2", fontWeight: 600 }}
-            >
-              Sign up
-            </Link>
-          </Typography>
-        </Paper>
-      </motion.div>
-    </Box>
+              <LockOutlined sx={{ fontSize: 40, color: "#fff" }} />
+            </Box>
+
+            <Typography variant="h5" fontWeight="bold" sx={{ mb: 1 }}>
+              Welcome Back
+            </Typography>
+
+            {error && (
+              <Typography color="error" sx={{ mb: 2, fontSize: 14 }}>
+                {error}
+              </Typography>
+            )}
+
+            <form onSubmit={handleLogin}>
+              <TextField
+                fullWidth
+                label="Email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                sx={{ mb: 2 }}
+              />
+
+              <TextField
+                fullWidth
+                label="Password"
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                sx={{ mb: 3 }}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        onClick={() => setShowPassword(!showPassword)}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+              />
+
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                disabled={loading}
+                sx={{
+                  py: 1.4,
+                  fontWeight: "bold",
+                  borderRadius: "12px",
+                  textTransform: "none",
+                }}
+              >
+                {loading ? (
+                  <CircularProgress size={24} color="inherit" />
+                ) : (
+                  "Login"
+                )}
+              </Button>
+            </form>
+
+            <Typography variant="body2" sx={{ mt: 3 }}>
+              Don’t have an account?{" "}
+              <Link
+                to="/registration"
+                style={{ color: "#1976d2", fontWeight: 600 }}
+              >
+                Sign up
+              </Link>
+            </Typography>
+          </Paper>
+        </motion.div>
+      </Box>
     </>
   );
 };

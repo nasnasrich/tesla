@@ -1,4 +1,4 @@
-import Nav from "../Component/Navs";
+import Nav from "../Component/Nav";
 import React, { useState } from "react";
 import {
   Box,
@@ -28,26 +28,34 @@ const Registration = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  // Update form state
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
-  const Register = async (e) => {
+  // Handle registration
+  const handleRegister = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
     try {
-       const res = await axios.post(
-       `${import.meta.env.VITE_API_URL}/api/users/register`,
-         form
-        );
-      console.log(res.data); // check response
+      // Debug logs (optional)
+      console.log("Posting to:", `${import.meta.env.VITE_BASE_URL}/api/users/register`);
+      console.log("Form data:", form);
+
+      const res = await axios.post(
+        `${import.meta.env.VITE_BASE_URL}/api/users/register`,
+        form
+      );
+
+      console.log("Response from backend:", res.data);
       navigate("/login");
     } catch (err) {
+      console.error(err);
       setError(
         err?.response?.data?.message ||
-          err?.response?.data?.error ||
-          "Registration failed"
+        err?.response?.data?.error ||
+        "Registration failed"
       );
     } finally {
       setLoading(false);
@@ -56,7 +64,7 @@ const Registration = () => {
 
   return (
     <>
-      <Nav/>
+      <Nav />
       <Box
         sx={{
           minHeight: "85vh",
@@ -91,7 +99,7 @@ const Registration = () => {
               {error || "Create Account"}
             </Typography>
 
-            <form onSubmit={Register}>
+            <form onSubmit={handleRegister}>
               {[
                 "name",
                 "email",

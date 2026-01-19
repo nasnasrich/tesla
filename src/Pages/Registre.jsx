@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
-const Registre = () => {
+const Register = () => {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -28,27 +28,34 @@ const Registre = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  // Update form state
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
-  const Register = async (e) => {
+  // Handle registration
+  const handleRegister = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
     try {
-     const res = await axios.post(
-       `${import.meta.env.VITE_API_URL}/api/users/register`,
-         form
-        );
+      // Debug logs (optional)
+      console.log("Posting to:", `${import.meta.env.VITE_BASE_URL}/api/users/register`);
+      console.log("Form data:", form);
 
-      console.log(res.data); // check response
-      navigate("/login");
+      const res = await axios.post(
+        `${import.meta.env.VITE_BASE_URL}/api/users/register`,
+        form
+      );
+
+      console.log("Response from backend:", res.data);
+      navigate("/log");
     } catch (err) {
+      console.error(err);
       setError(
         err?.response?.data?.message ||
-          err?.response?.data?.error ||
-          "Registration failed"
+        err?.response?.data?.error ||
+        "Registration failed"
       );
     } finally {
       setLoading(false);
@@ -92,7 +99,7 @@ const Registre = () => {
               {error || "Create Account"}
             </Typography>
 
-            <form onSubmit={Register}>
+            <form onSubmit={handleRegister}>
               {[
                 "name",
                 "email",
@@ -133,7 +140,7 @@ const Registre = () => {
 
             <Typography variant="body2" sx={{ mt: 3 }}>
               Already have an account?{" "}
-              <Link to="/log" style={{ color: "#1976d2", fontWeight: 600 }}>
+              <Link to="/login" style={{ color: "#1976d2", fontWeight: 600 }}>
                 Login
               </Link>
             </Typography>
@@ -144,4 +151,4 @@ const Registre = () => {
   );
 };
 
-export default Registre;
+export default Register;
