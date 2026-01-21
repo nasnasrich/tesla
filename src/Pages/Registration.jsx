@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { Box, TextField, Button, Typography, Paper, CircularProgress, useMediaQuery } from "@mui/material";
+import {
+  Box,
+  TextField,
+  Button,
+  Typography,
+  Paper,
+  CircularProgress,
+  useMediaQuery,
+} from "@mui/material";
 import { motion } from "framer-motion";
 import { useTheme } from "@mui/material/styles";
 import axios from "axios";
@@ -33,7 +41,7 @@ const Registration = () => {
         `${import.meta.env.VITE_BASE_URL}/api/users/register`,
         formData,
         {
-          withCredentials: true, // allows cookies/auth to work
+          withCredentials: true,
           headers: { "Content-Type": "application/json" },
         }
       );
@@ -151,7 +159,9 @@ const Registration = () => {
                   textTransform: "none",
                   fontSize: "1rem",
                   background: "linear-gradient(135deg, #1976d2, #0d47a1)",
-                  "&:hover": { background: "linear-gradient(135deg, #1565c0, #0d47a1)" },
+                  "&:hover": {
+                    background: "linear-gradient(135deg, #1565c0, #0d47a1)",
+                  },
                 }}
               >
                 {loading ? <CircularProgress size={24} color="inherit" /> : "Register"}
@@ -160,7 +170,11 @@ const Registration = () => {
 
             <Typography
               variant="body2"
-              sx={{ mt: 3, textAlign: "center", fontSize: { xs: "0.85rem", sm: "0.95rem" } }}
+              sx={{
+                mt: 3,
+                textAlign: "center",
+                fontSize: { xs: "0.85rem", sm: "0.95rem" },
+              }}
             >
               Already have an account?{" "}
               <Link
