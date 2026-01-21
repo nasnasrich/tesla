@@ -225,7 +225,7 @@ function ResponsiveAppBar() {
 
               <MenuItem
                 component={Link}
-                to="/Registration"
+                to="/Registre"
                 onClick={handleCloseUserMenu}
               >
                 <Typography textAlign="center">Register</Typography>

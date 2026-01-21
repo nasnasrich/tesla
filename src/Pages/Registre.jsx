@@ -1,4 +1,5 @@
-import Navs from "../Component/Navs";
+import Nav from "../Component/Nav";
+
 import React, { useState } from "react";
 import {
   Box,
@@ -7,56 +8,51 @@ import {
   Typography,
   Paper,
   CircularProgress,
+  useMediaQuery,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
+import { useTheme } from "@mui/material/styles";
 
-const Register = () => {
+
+
+const Registre = () => {
   const navigate = useNavigate();
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.between("sm", "md"));
 
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    password: "",
-    phoneNumber: "",
-    address: "",
-    country: "",
-    state: "",
-  });
-
-  const [loading, setLoading] = useState(false);
+  
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  // Update form state
-  const handleChange = (e) =>
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const formData = {name,email,password,phone, address,};
 
-  // Handle registration
   const handleRegister = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
     try {
-      // Debug logs (optional)
-      console.log("Posting to:", `${import.meta.env.VITE_BASE_URL}/api/users/register`);
-      console.log("Form data:", form);
-
-      const res = await axios.post(
+      const  data  = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/api/users/register`,
-        form
+        formData
       );
-
-      console.log("Response from backend:", res.data);
+      console.log(data);
       navigate("/log");
-    } catch (err) {
-      console.error(err);
-      setError(
-        err?.response?.data?.message ||
-        err?.response?.data?.error ||
-        "Registration failed"
-      );
+    } catch (error) {
+      console.error(error);
+      const errMsg =
+        error.response?.data?.message ||
+        error.message ||
+        "Registration failed. Please try again.";
+      setError(errMsg);
     } finally {
       setLoading(false);
     }
@@ -64,91 +60,144 @@ const Register = () => {
 
   return (
     <>
-      <Navs />
-      <Box
-        sx={{
-          minHeight: "85vh",
-          marginLeft: "1px",
-          marginTop: "1vh",
-          boxShadow: "4px 4px 5px rgb(0, 0, 0)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "linear-gradient(135deg, #1565c0, #42a5f5)",
-          p: 2,
+      <Nav />
+    <Box
+      sx={{
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        background: "linear-gradient(135deg, #164370ff, #164370ff)",
+        px: { xs: 2, sm: 3, md: 4 },
+        py: { xs: 3, sm: 4, md: 6 },
+      }}
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9, y: 40 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        style={{
+          width: "100%",
+          maxWidth: isSmallScreen ? 380 : isMediumScreen ? 480 : 520,
         }}
       >
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          style={{ width: "100%", maxWidth: 400 }}
+        <Paper
+          elevation={12}
+          sx={{
+            p: { xs: 3, sm: 4 },
+            borderRadius: "20px",
+            background: "rgba(255, 255, 255, 0.95)",
+            backdropFilter: "blur(12px)",
+            boxShadow: "0 8px 25px rgba(0, 0, 0, 0.2)",
+          }}
         >
-          <Paper
-            elevation={10}
+          <Typography
+            variant={isSmallScreen ? "h6" : "h5"}
+            fontWeight="bold"
             sx={{
-              p: 3,
-              borderRadius: "20px",
+              mb: 3,
+              color: error ? "error.main" : "#0d47a1",
               textAlign: "center",
-              background: "rgba(255,255,255,0.95)",
-              maxHeight: { xs: "90vh", sm: "auto" },
-              overflowY: { xs: "auto", sm: "visible" },
+              wordBreak: "break-word",
             }}
           >
-            <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
-              {error || "Create Account"}
-            </Typography>
+            {error ? error : "Create Account"}
+          </Typography>
 
-            <form onSubmit={handleRegister}>
-              {[
-                "name",
-                "email",
-                "password",
-                "phoneNumber",
-                "address",
-                "country",
-                "state",
-              ].map((field) => (
-                <TextField
-                  key={field}
-                  name={field}
-                  label={field.replace(/([A-Z])/g, " $1")}
-                  type={field === "password" ? "password" : "text"}
-                  fullWidth
-                  size="small"
-                  onChange={handleChange}
-                  sx={{ mb: 1.5 }}
-                  required={["name", "email", "password"].includes(field)}
-                />
-              ))}
+          <form onSubmit={handleRegister}>
+            <TextField
+              fullWidth
+              label="Name"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              sx={{ mb: 2 }}
+              required
+            />
+            <TextField
+              fullWidth
+              label="Email"
+              name="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              sx={{ mb: 2 }}
+              required
+            />
+            <TextField
+              fullWidth
+              label="Password"
+              name="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              sx={{ mb: 2 }}
+              required
+            />
+            <TextField
+              fullWidth
+              label="Phone Number"
+              name="phoneNumber"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              sx={{ mb: 2 }}
+            />
+            <TextField
+              fullWidth
+              label="Address"
+              name="address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              sx={{ mb: 3 }}
+            />
 
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                disabled={loading}
-                sx={{
-                  py: 1.4,
-                  fontWeight: "bold",
-                  borderRadius: "12px",
-                  textTransform: "none",
-                }}
-              >
-                {loading ? <CircularProgress size={24} color="inherit" /> : "Register"}
-              </Button>
-            </form>
+            <Button
+              fullWidth
+              type="submit"
+              variant="contained"
+              disabled={loading}
+              sx={{
+                py: 1.4,
+                fontWeight: "bold",
+                borderRadius: "12px",
+                textTransform: "none",
+                fontSize: "1rem",
+                background: "linear-gradient(135deg, #1976d2, #0d47a1)",
+                boxShadow: "0 6px 25px rgba(13, 71, 161, 0.4)",
+                "&:hover": {
+                  background: "linear-gradient(135deg, #1565c0, #0d47a1)",
+                },
+              }}
+            >
+              {loading ? <CircularProgress size={24} color="inherit" /> : "Register"}
+            </Button>
+          </form>
 
-            <Typography variant="body2" sx={{ mt: 3 }}>
-              Already have an account?{" "}
-              <Link to="/login" style={{ color: "#1976d2", fontWeight: 600 }}>
-                Login
-              </Link>
-            </Typography>
-          </Paper>
-        </motion.div>
-      </Box>
-    </>
+          <Typography
+            variant="body2"
+            sx={{
+              mt: 3,
+              textAlign: "center",
+              fontSize: { xs: "0.85rem", sm: "0.95rem" },
+            }}
+          >
+            Already have an account?{" "}
+            <Link to="/log"
+              style={{
+                color: "#1976d2",
+                fontWeight: 600,
+                textDecoration: "none",
+              }}
+            >
+              Login
+            </Link>
+          </Typography>
+        </Paper>
+      </motion.div>
+    </Box>
+   
+</>
   );
 };
 
-export default Register;
+export default Registre;

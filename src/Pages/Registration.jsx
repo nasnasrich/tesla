@@ -1,5 +1,5 @@
+import Navs from "../Component/Navs";
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
 import {
   Box,
   TextField,
@@ -10,9 +10,9 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import { useTheme } from "@mui/material/styles";
 import axios from "axios";
-import Nav from "../Component/Nav";
+import { useNavigate, Link } from "react-router-dom";
+import { useTheme } from "@mui/material/styles";
 
 const Registration = () => {
   const navigate = useNavigate();
@@ -20,7 +20,6 @@ const Registration = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const isMediumScreen = useMediaQuery(theme.breakpoints.between("sm", "md"));
 
-  // Form state
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,30 +28,25 @@ const Registration = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const formData = { name, email, password, phone, address };
+
   const handleRegister = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
-    const formData = { name, email, password, phone, address };
-
     try {
-      const response = await axios.post(
+      const data = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/api/users/register`,
-        formData,
-        {
-          withCredentials: true,
-          headers: { "Content-Type": "application/json" },
-        }
+        formData
       );
-
-      console.log("Registration successful:", response.data);
-      navigate("/log"); // redirect to login after success
-    } catch (err) {
-      console.error(err);
+      console.log(data);
+      navigate("/log");
+    } catch (error) {
+      console.error(error);
       const errMsg =
-        err.response?.data?.message ||
-        err.message ||
+        error.response?.data?.message ||
+        error.message ||
         "Registration failed. Please try again.";
       setError(errMsg);
     } finally {
@@ -62,90 +56,65 @@ const Registration = () => {
 
   return (
     <>
-      <Nav />
+      <Navs />
       <Box
         sx={{
-          minHeight: "100vh",
+          minHeight: "85vh",
+          marginLeft: "1px",
+          marginTop: "1vh",
+          boxShadow: "4px 4px 5px rgb(0, 0, 0)",
           display: "flex",
-          justifyContent: "center",
           alignItems: "center",
-          background: "linear-gradient(135deg, #164370, #0d47a1)",
-          px: { xs: 2, sm: 3, md: 4 },
-          py: { xs: 3, sm: 4, md: 6 },
+          justifyContent: "center",
+          background: "linear-gradient(135deg, #1565c0, #42a5f5)",
+          p: 2,
         }}
       >
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 40 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          style={{
-            width: "100%",
-            maxWidth: isSmallScreen ? 380 : isMediumScreen ? 480 : 520,
-          }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          style={{ width: "100%", maxWidth: 400 }}
         >
           <Paper
-            elevation={12}
+            elevation={10}
             sx={{
-              p: { xs: 3, sm: 4 },
+              p: 3,
               borderRadius: "20px",
-              background: "rgba(255, 255, 255, 0.95)",
-              backdropFilter: "blur(12px)",
+              textAlign: "center",
+              background: "rgba(255,255,255,0.95)",
+              maxHeight: { xs: "90vh", sm: "auto" },
+              overflowY: { xs: "auto", sm: "visible" },
             }}
           >
             <Typography
-              variant={isSmallScreen ? "h6" : "h5"}
+              variant="h5"
               fontWeight="bold"
-              sx={{
-                mb: 3,
-                color: error ? "error.main" : "#0d47a1",
-                textAlign: "center",
-                wordBreak: "break-word",
-              }}
+              sx={{ mb: 2, color: error ? "error.main" : "#0d47a1" }}
             >
-              {error ? error : "Create Account"}
+              {error || "Create Account"}
             </Typography>
 
             <form onSubmit={handleRegister}>
-              <TextField
-                fullWidth
-                label="Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                sx={{ mb: 2 }}
-                required
-              />
-              <TextField
-                fullWidth
-                label="Email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                sx={{ mb: 2 }}
-                required
-              />
-              <TextField
-                fullWidth
-                label="Password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                sx={{ mb: 2 }}
-                required
-              />
-              <TextField
-                fullWidth
-                label="Phone Number"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                sx={{ mb: 2 }}
-              />
-              <TextField
-                fullWidth
-                label="Address"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-                sx={{ mb: 3 }}
-              />
+              {[
+                { label: "Name", value: name, setValue: setName, required: true },
+                { label: "Email", value: email, setValue: setEmail, type: "email", required: true },
+                { label: "Password", value: password, setValue: setPassword, type: "password", required: true },
+                { label: "Phone Number", value: phone, setValue: setPhone },
+                { label: "Address", value: address, setValue: setAddress },
+              ].map((field, idx) => (
+                <TextField
+                  key={idx}
+                  fullWidth
+                  label={field.label}
+                  name={field.label.toLowerCase().replace(" ", "")}
+                  type={field.type || "text"}
+                  value={field.value}
+                  onChange={(e) => field.setValue(e.target.value)}
+                  sx={{ mb: 1.5 }}
+                  required={field.required || false}
+                />
+              ))}
 
               <Button
                 fullWidth
@@ -157,30 +126,15 @@ const Registration = () => {
                   fontWeight: "bold",
                   borderRadius: "12px",
                   textTransform: "none",
-                  fontSize: "1rem",
-                  background: "linear-gradient(135deg, #1976d2, #0d47a1)",
-                  "&:hover": {
-                    background: "linear-gradient(135deg, #1565c0, #0d47a1)",
-                  },
                 }}
               >
                 {loading ? <CircularProgress size={24} color="inherit" /> : "Register"}
               </Button>
             </form>
 
-            <Typography
-              variant="body2"
-              sx={{
-                mt: 3,
-                textAlign: "center",
-                fontSize: { xs: "0.85rem", sm: "0.95rem" },
-              }}
-            >
+            <Typography variant="body2" sx={{ mt: 3 }}>
               Already have an account?{" "}
-              <Link
-                to="/"
-                style={{ color: "#1976d2", fontWeight: 600, textDecoration: "none" }}
-              >
+              <Link to="/log" style={{ color: "#1976d2", fontWeight: 600 }}>
                 Login
               </Link>
             </Typography>
