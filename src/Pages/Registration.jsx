@@ -42,7 +42,7 @@ const Registration = () => {
         { withCredentials: true } // ✅ ensures CORS cookies/auth work
       );
       console.log("Registration successful:", data);
-      navigate("/hero");
+      navigate("/log");
     } catch (err) {
       console.error(err);
       const errMsg =

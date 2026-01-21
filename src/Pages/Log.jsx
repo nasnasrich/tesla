@@ -51,7 +51,7 @@ const Log = () => {
       // localStorage.setItem("token", res.data.token);
       // localStorage.setItem("user", JSON.stringify(res.data.user));
 
-      navigate("/registre");
+      navigate("/hero");
     } catch (err) {
       console.error(err);
       setError(
@@ -176,7 +176,7 @@ const Log = () => {
             <Typography variant="body2" sx={{ mt: 3 }}>
               Don’t have an account?{" "}
               <Link
-                to="/registre"
+                to="/registration"
                 style={{ color: "#1976d2", fontWeight: 600 }}
               >
                 Sign up
