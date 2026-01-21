@@ -1,18 +1,10 @@
-import Nav from "../Component/Nav";
 import React, { useState } from "react";
-import {
-  Box,
-  TextField,
-  Button,
-  Typography,
-  Paper,
-  CircularProgress,
-  useMediaQuery,
-} from "@mui/material";
-import { motion } from "framer-motion";
-import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import { Box, TextField, Button, Typography, Paper, CircularProgress, useMediaQuery } from "@mui/material";
+import { motion } from "framer-motion";
 import { useTheme } from "@mui/material/styles";
+import axios from "axios";
+import Nav from "../Component/Nav";
 
 const Registration = () => {
   const navigate = useNavigate();
@@ -20,6 +12,7 @@ const Registration = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const isMediumScreen = useMediaQuery(theme.breakpoints.between("sm", "md"));
 
+  // Form state
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,21 +21,25 @@ const Registration = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const formData = { name, email, password, phone, address };
-
   const handleRegister = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
+    const formData = { name, email, password, phone, address };
+
     try {
-      const data = await axios.post(
+      const response = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/api/users/register`,
         formData,
-        { withCredentials: true } // ✅ ensures CORS cookies/auth work
+        {
+          withCredentials: true, // allows cookies/auth to work
+          headers: { "Content-Type": "application/json" },
+        }
       );
-      console.log("Registration successful:", data);
-      navigate("/log");
+
+      console.log("Registration successful:", response.data);
+      navigate("/log"); // redirect to login after success
     } catch (err) {
       console.error(err);
       const errMsg =
@@ -64,7 +61,7 @@ const Registration = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          background: "linear-gradient(135deg, #164370ff, #164370ff)",
+          background: "linear-gradient(135deg, #164370, #0d47a1)",
           px: { xs: 2, sm: 3, md: 4 },
           py: { xs: 3, sm: 4, md: 6 },
         }}
@@ -85,7 +82,6 @@ const Registration = () => {
               borderRadius: "20px",
               background: "rgba(255, 255, 255, 0.95)",
               backdropFilter: "blur(12px)",
-              boxShadow: "0 8px 25px rgba(0, 0, 0, 0.2)",
             }}
           >
             <Typography
@@ -105,7 +101,6 @@ const Registration = () => {
               <TextField
                 fullWidth
                 label="Name"
-                name="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 sx={{ mb: 2 }}
@@ -114,7 +109,6 @@ const Registration = () => {
               <TextField
                 fullWidth
                 label="Email"
-                name="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -124,7 +118,6 @@ const Registration = () => {
               <TextField
                 fullWidth
                 label="Password"
-                name="password"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -134,7 +127,6 @@ const Registration = () => {
               <TextField
                 fullWidth
                 label="Phone Number"
-                name="phoneNumber"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 sx={{ mb: 2 }}
@@ -142,7 +134,6 @@ const Registration = () => {
               <TextField
                 fullWidth
                 label="Address"
-                name="address"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 sx={{ mb: 3 }}
@@ -160,10 +151,7 @@ const Registration = () => {
                   textTransform: "none",
                   fontSize: "1rem",
                   background: "linear-gradient(135deg, #1976d2, #0d47a1)",
-                  boxShadow: "0 6px 25px rgba(13, 71, 161, 0.4)",
-                  "&:hover": {
-                    background: "linear-gradient(135deg, #1565c0, #0d47a1)",
-                  },
+                  "&:hover": { background: "linear-gradient(135deg, #1565c0, #0d47a1)" },
                 }}
               >
                 {loading ? <CircularProgress size={24} color="inherit" /> : "Register"}
@@ -172,20 +160,12 @@ const Registration = () => {
 
             <Typography
               variant="body2"
-              sx={{
-                mt: 3,
-                textAlign: "center",
-                fontSize: { xs: "0.85rem", sm: "0.95rem" },
-              }}
+              sx={{ mt: 3, textAlign: "center", fontSize: { xs: "0.85rem", sm: "0.95rem" } }}
             >
               Already have an account?{" "}
               <Link
                 to="/"
-                style={{
-                  color: "#1976d2",
-                  fontWeight: 600,
-                  textDecoration: "none",
-                }}
+                style={{ color: "#1976d2", fontWeight: 600, textDecoration: "none" }}
               >
                 Login
               </Link>
