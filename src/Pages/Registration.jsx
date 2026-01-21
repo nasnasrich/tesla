@@ -1,4 +1,4 @@
-import Navs from "../Component/Navs";
+import Nav from "../Component/Nav";
 import React, { useState } from "react";
 import {
   Box,
@@ -56,7 +56,7 @@ const Registration = () => {
 
   return (
     <>
-      <Navs />
+      <Nav />
       <Box
         sx={{
           minHeight: "85vh",

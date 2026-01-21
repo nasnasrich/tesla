@@ -176,7 +176,7 @@ const Log = () => {
             <Typography variant="body2" sx={{ mt: 3 }}>
               Don’t have an account?{" "}
               <Link
-                to="/registration"
+                to="/registre"
                 style={{ color: "#1976d2", fontWeight: 600 }}
               >
                 Sign up
