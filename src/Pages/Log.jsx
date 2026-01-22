@@ -71,7 +71,7 @@ const Log = () => {
         sx={{
           minHeight: "95vh",
           // marginLeft: "1px",
-          marginTop: "2px",
+          marginTop: "3px",
           boxShadow: "4px 4px 5px rgb(0, 0, 0)",
           display: "flex",
           alignItems: "center",
@@ -90,6 +90,7 @@ const Log = () => {
             elevation={10}
             sx={{
               p: 4,
+              marginLeft: "2px",
               borderRadius: "20px",
               textAlign: "center",
               background: "rgba(255,255,255,0.95)",

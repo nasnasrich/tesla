@@ -61,7 +61,7 @@ const Registration = () => {
         sx={{
            minHeight: "95vh",
           // marginLeft: "1px",
-          marginTop: "2px",
+          marginTop: "3px",
           boxShadow: "4px 4px 5px rgb(0, 0, 0)",
           display: "flex",
           alignItems: "center",
@@ -84,6 +84,7 @@ const Registration = () => {
               textAlign: "center",
               background: "rgba(255,255,255,0.95)",
               maxHeight: { xs: "90vh", sm: "auto" },
+              marginLeft: "2px",
               overflowY: { xs: "auto", sm: "visible" },
             }}
           >

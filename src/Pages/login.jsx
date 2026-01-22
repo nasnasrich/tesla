@@ -71,7 +71,7 @@ const Login = () => {
         sx={{
            minHeight: "95vh",
           // marginLeft: "1px",
-          marginTop: "2px",
+          marginTop: "3px",
           boxShadow: "4px 4px 5px rgb(0, 0, 0)",
           display: "flex",
           alignItems: "center",
@@ -91,6 +91,7 @@ const Login = () => {
             sx={{
               p: 4,
               borderRadius: "20px",
+              marginLeft: "2px",
               textAlign: "center",
               background: "rgba(255,255,255,0.95)",
             }}
