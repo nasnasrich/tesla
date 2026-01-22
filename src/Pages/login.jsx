@@ -69,9 +69,9 @@ const Login = () => {
       <Nav />
       <Box
         sx={{
-          minHeight: "85vh",
-          marginLeft: "1px",
-          marginTop: "1vh",
+           minHeight: "95vh",
+          // marginLeft: "1px",
+          marginTop: "2px",
           boxShadow: "4px 4px 5px rgb(0, 0, 0)",
           display: "flex",
           alignItems: "center",
